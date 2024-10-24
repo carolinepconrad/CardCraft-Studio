@@ -1,7 +1,3 @@
-<p align="center">
-<img src="Petcaugh.png" width=250 height=200>
-</p>
-
 # CardCraft Studio 
 
 #### A Website by Nathaniel Lofgren, Bogdan Mygovych, Caroline Conrad, Jake Gabriels 
