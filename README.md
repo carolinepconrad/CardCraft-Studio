@@ -2,7 +2,7 @@
 <img src="Petcaugh.png" width=250 height=200>
 </p>
 
-# Petcaugh Postcards 
+# CardCraft Studio 
 
 #### A Website by Nathaniel Lofgren, Bogdan Mygovych, Caroline Conrad, Jake Gabriels 
     
