@@ -26,4 +26,4 @@ The data that will need to be stored is a card catalog with all the unique card 
 ### Pages
 [Example Markdown](https://github.com/Natelofgren/CardCraft-Studio/blob/main/page_designs.md)
 
-![alt text](ColorPalette.jpg)
+![ColorPalette](ColorPalette.png)
