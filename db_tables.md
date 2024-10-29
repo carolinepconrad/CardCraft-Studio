@@ -7,6 +7,6 @@
 | ID Number | Username                                      | Password                | First Name | Last Name | Address |
 |-----------|-----------------------------------------------|-------------------------|------------|-----------|---------|
 |1, 2... etc| identfying name for the user, set by the user | password stored as hash | first name | last name | address |
-|SMALLINT(255)| CHAR(255)                                   |CHAR(255)                | CHAR(255)  | CHAR(255) |TEXT(65535)|
+|SMALLINT(255)| CHAR(255)                                   |CHAR(255)                | CHAR(255)  | CHAR(255) |TEXT(21845)|
 
 
