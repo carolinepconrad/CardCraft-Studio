@@ -1,0 +1,24 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0; /* Removes default body margin */
+    overflow: hidden; /* Prevents scrolling */
+}
+
+#headerPlace {
+    background-color: #bf9f78;
+    width: 100%; /* Matches the full width of the body */
+    height: 30px;
+    text-align: center;
+    padding:30px;
+}
+
+#hometitle{
+    size:100px;
+    text-align: center;
+}
+#aboutUs{
+    background-color: #bf9f78;
+    padding:10;
+    color: red;
+}
