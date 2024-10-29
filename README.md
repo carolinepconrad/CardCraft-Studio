@@ -8,6 +8,9 @@
 A Christmas card-selling business that sells a variety of cards with a wide selection of designs to choose from. Sells digital cards as well as physical ones sending the digital ones through email. Physical cards can come with an envelope already addressed to the North Pole! 
 The data that will need to be stored is a card catalog with all the unique card designs.
  This will include both the physical and digital designs as well as an inventory amount for each item.  
+ 
+### Database Tables
+[Example Markdown](https://github.com/Natelofgren/CardCraft-Studio/blob/main/db_tables.md)
 
 ### Pages in the website
 
@@ -18,5 +21,9 @@ The data that will need to be stored is a card catalog with all the unique card 
 5. Catalog Page
 6. Cart Page
 7. Order Confirmation Page
-8. User Preferences 
+8. User Preferences
+
+### Pages
+[Example Markdown](https://github.com/Natelofgren/CardCraft-Studio/blob/main/page_designs.md)
+
 
