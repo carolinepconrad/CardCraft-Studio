@@ -10,7 +10,7 @@ The data that will need to be stored is a card catalog with all the unique card 
  This will include both the physical and digital designs as well as an inventory amount for each item.  
  
 ### Database Tables
-[Example Markdown](https://github.com/Natelofgren/CardCraft-Studio/blob/main/db_tables.md)
+[Example Tables Markdown](https://github.com/Natelofgren/CardCraft-Studio/blob/main/db_tables.md)
 
 ### Pages in the website
 
@@ -24,6 +24,6 @@ The data that will need to be stored is a card catalog with all the unique card 
 8. User Preferences
 
 ### Pages
-[Example Markdown](https://github.com/Natelofgren/CardCraft-Studio/blob/main/page_designs.md)
+[Example Pages Markdown](https://github.com/Natelofgren/CardCraft-Studio/blob/main/page_designs.md)
 ### Color Palette
 ![ColorPalette](ColorPalette.png)
