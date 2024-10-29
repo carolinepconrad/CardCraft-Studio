@@ -3,7 +3,7 @@
 #### A Website by Nathaniel Lofgren, Bogdan Mygovych, Caroline Conrad, Jake Gabriels 
     
 
-### Overview  
+## Overview  
 
 A Christmas card-selling business that sells a variety of cards with a wide selection of designs to choose from. Sells digital cards as well as physical ones sending the digital ones through email. Physical cards can come with an envelope already addressed to the North Pole! 
 The data that will need to be stored is a card catalog with all the unique card designs.
