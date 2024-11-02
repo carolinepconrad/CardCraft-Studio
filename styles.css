@@ -1,11 +1,13 @@
 /* Basic Body Reset */
+@import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap');
+
 body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     background-color: #f2e1d8;
-
+    color: #333;
 }
 
 /* Header Styling */
@@ -16,6 +18,7 @@ body {
     padding: 20px;
     color: #fff;
     font-size: 1.2em;
+    font-family: 'Inconsolata', monospace;
 }
 
 /* First Section Styling */
@@ -24,54 +27,185 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 60vh;
-    color: #bf5349;
-    
+    height: 70vh;
+    color: #8C031C;
+    background: #fff7f0;
+    padding: 20px;
+    text-align: center;
 }
 
-#firstSection h1{
-    font-size: 100px;
-}
-
-#hometitle {
-    font-size: 2.5em;
+#firstSection h1 {
+    font-size: 6em;
+    font-family: 'Bigshot One', cursive;
+    font-weight: 400;
     margin: 0;
+    letter-spacing: 2px;
 }
 
-#logoContainer {
-    display: flex;
-    justify-content: center;
-    padding: 2%;
+#firstSection .tagline {
+    font-size: 1.2em;
+    font-family: 'Inconsolata', monospace;
+    color: #8c4c3a;
     margin-top: 10px;
 }
 
-#logoContainer img {
-    max-width: 500px;
+.btn-primary {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #bf5349;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: background-color 0.3s ease;
+}
 
+.btn-primary:hover {
+    background-color: #8c4c3a;
+}
+
+#logoContainer {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#logoContainer img {
+    max-width: 300px;
 }
 
 /* About Us Section Styling */
 #aboutUs {
     background-color: #f2e1d8;
-    padding: 30px;
+    padding: 40px 10%;
     color: #333;
-    text-align: left;
+    text-align: center;
 }
 
 #aboutUs h2 {
-    color: #bf5349;
-    margin-top: 0;
-    margin-left: 50px;
-
+    color:#8C031C;
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 #aboutUs p {
     font-size: 1.1em;
-    line-height: 1.5;
+    line-height: 1.6;
+    max-width: 800px;
     margin: 0 auto;
-    width: 80%;
-    margin-left: 150px;
+    text-align: justify;
 
+    
 }
 
+/* Gallery Section Styling */
+.gallery {
+    background-color: #fff7f0;
+    padding: 40px 10%;
+    text-align: center;
+}
 
+.gallery h2 {
+    color: #8C031C;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonials Section Styling */
+.testimonials {
+    background-color: #f2e1d8;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: #8C031C;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    font-style: italic;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    max-width: 600px;
+}
+
+.testimonial p {
+    margin: 0;
+    color: #8c4c3a;
+}
+
+.testimonial p:last-child {
+    text-align: right;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Contact Us Section Styling */
+.contact {
+    background-color: #fff7f0;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.contact h2 {
+    color:#8C031C;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+#mapContainer iframe {
+    width: 100%;
+    border: none;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #bf9f78;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+}
