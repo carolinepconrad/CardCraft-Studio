@@ -6,7 +6,6 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Space Grotesk', sans-serif;
-    background-color: #f2e1d8;
     color: #333;
 }
 
@@ -28,14 +27,14 @@ body {
     align-items: center;
     justify-content: center;
     height: 70vh;
-    color: #8C031C;
-    background: #fff7f0;
+    color: #fff7f0;
+    background: #4d0b17;
     padding: 20px;
     text-align: center;
 }
 
 #firstSection h1 {
-    font-size: 6em;
+    font-size: 7.5em;
     font-family: 'Bigshot One', cursive;
     font-weight: 400;
     margin: 0;
@@ -45,7 +44,7 @@ body {
 #firstSection .tagline {
     font-size: 1.2em;
     font-family: 'Inconsolata', monospace;
-    color: #8c4c3a;
+    color: #fff7f0;
     margin-top: 10px;
 }
 
@@ -139,7 +138,7 @@ body {
 
 .testimonial {
     font-style: italic;
-    background: #fff;
+    background: #fff7f0;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -176,13 +175,6 @@ body {
     line-height: 1.5;
 }
 
-#mapContainer iframe {
-    width: 100%;
-    border: none;
-    margin-top: 20px;
-    border-radius: 8px;
-}
-
 /* Footer Styling */
 footer {
     background-color: #bf9f78;
@@ -196,16 +188,14 @@ footer p {
     font-size: 0.9em;
 }
 
-.social-media {
-    margin-top: 10px;
-}
 
-.social-media a {
-    margin: 0 10px;
-    display: inline-block;
-}
 
-.social-media img {
-    width: 24px;
-    height: 24px;
-}
+/* customizable snowflake styling  https://pajasevi.github.io/CSSnowflakes/*/
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+  }
+  
+  .snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}@keyframes snowflakes-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;animation-name:snowflakes-shake;animation-duration:3s;animation-timing-function:ease-in-out}.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear}.snowflake:nth-of-type(0){left:1%;animation-delay:0s}.snowflake:nth-of-type(0) .inner{animation-delay:0s}.snowflake:first-of-type{left:10%;animation-delay:1s}.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}.snowflake:nth-of-type(4){left:40%;animation-delay:2s}.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}.snowflake:nth-of-type(5) .inner{animation-delay:8s}.snowflake:nth-of-type(6){left:60%;animation-delay:2s}.snowflake:nth-of-type(7){left:70%;animation-delay:1s}.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}.snowflake:nth-of-type(8){left:80%;animation-delay:0s}.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}.snowflake:nth-of-type(9) .inner{animation-delay:3s}.snowflake:nth-of-type(10){left:25%;animation-delay:0s}.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
