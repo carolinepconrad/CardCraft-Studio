@@ -17,11 +17,11 @@
         <h2>Login Form</h2>
         <div class="form__group field">
           <form action="process_login.php" method="post" >
+            <label class="form__label" for="username" >Username:</label>            
             <input class="form__field" type="text" name="username" id="username" required>
-            <label class="form__label" for="username" >Username:</label>
-            <input class="form__field" type="password" name="password" id="password" required>
-            <label class="form__label" for="password">Password:</label>
-            <input type="submit" value="Login" name="login_try">
+            <label class="form__label" for="username" >Password:</label>
+            <input class="form__field" type="password" name="password"id="password" required>
+            <input class="button" type="submit" value="Login" name="login_try">
           </form>
         </body>
         </div>
@@ -32,17 +32,19 @@
       <div class="grid-child-element green">
           <body>
             <h2>Create Login</h2>
+            <div class="form__group field">
             <form action="create_login_final.php" method="post">
-              <label for="first_name">First Name:</label>
-              <input type="text" name="first_name" id="first_name" required><br><br>
-              <label for="last_name">Last Name:</label>
-              <input type="text" name="last_name" id="last_name" required><br><br>
-              <label for="username">Username:</label>
-              <input type="text" name="username" id="username" required><br><br>
-              <label for="password">Password:</label>
-              <input type="password" name="password" id="password" required><br><br>
-              <input type="submit" value="Create Login" name="create_login">
+              <label class="form__label" for="first_name">First Name:</label>
+              <input class="form__field" type="text" name="first_name" id="first_name" required><br><br>
+              <label class="form__label" for="last_name">Last Name:</label>
+              <input class="form__field" type="text" name="last_name" id="last_name" required><br><br>
+              <label class="form__label" for="username">Username:</label>
+              <input class="form__field" type="text" name="username" id="username" required><br><br>
+              <label class="form__label" for="password">Password:</label>
+              <input class="form__field" type="password" name="password" id="password" required><br><br>
+              <input class="button" type="submit" value="Create Login" name="create_login">
             </form>
+            </div>
           </body>
         </div>
 
