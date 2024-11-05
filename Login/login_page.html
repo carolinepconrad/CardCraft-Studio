@@ -3,63 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login_styles.css">
     <title>CardCraft Studio</title>
 </head>
 <body>
-    <div id="headerPlace">HEADER PLACE HOLDER</div>
-
-    <!-- Main Section -->
-    <section id="firstSection" class="hero">
-        <h1>CARDCRAFT STUDIO</h1>
-        <div id="logoContainer">
-            <!-- <img src="./images/logonobg.png" alt="Card Craft Studio Logo"> -->
+  <div id="headerPlace">HEADER PLACE HOLDER</div>
+  <!-- Main Section -->
+  <div class="grid-container-element" id="aboutUs" class="aboutUs">
+    <!-- Login Section -->
+    <section id="testimonials" class="testimonials">
+    <div class="grid-child-element red">
+      <body>
+        <h2>Login Form</h2>
+        <div class="form__group field">
+          <form action="process_login.php" method="post" >
+            <input class="form__field" type="text" name="username" id="username" required>
+            <label class="form__label" for="username" >Username:</label>
+            <input class="form__field" type="password" name="password" id="password" required>
+            <label class="form__label" for="password">Password:</label>
+            <input type="submit" value="Login" name="login_try">
+          </form>
+        </body>
         </div>
-        <p class="tagline">ADD TAG LINE</p>
-        <a href="#aboutUs" class="btn-primary">Learn More</a>
-        <!-- SNOWFLAKE EFFECT-->
-    <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-        <div class="snowflake">
-          <div class="inner">❄</div>
-        </div>
-      </div>
+    </div>
     </section>
+    <!-- Create Login Section -->
+    <section id="testimonials" class="testimonials">
+      <div class="grid-child-element green">
+          <body>
+            <h2>Create Login</h2>
+            <form action="create_login_final.php" method="post">
+              <label for="first_name">First Name:</label>
+              <input type="text" name="first_name" id="first_name" required><br><br>
+              <label for="last_name">Last Name:</label>
+              <input type="text" name="last_name" id="last_name" required><br><br>
+              <label for="username">Username:</label>
+              <input type="text" name="username" id="username" required><br><br>
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password" required><br><br>
+              <input type="submit" value="Create Login" name="create_login">
+            </form>
+          </body>
+        </div>
 
-
-
+  </div>        
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 CardCraft Studio. All rights reserved.</p>
