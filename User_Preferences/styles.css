@@ -1,0 +1,67 @@
+/* General body and layout styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2e1d8;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #bf9f78;
+    padding-top: 5px;  
+    padding-bottom: 5px; 
+}
+
+.navbar img {
+    width: 70px;
+}
+
+/* Section for User Preferences */
+section {
+    
+    padding-bottom: 50px; 
+}
+
+section center {
+    display: block;
+    width: 100%;
+}
+
+section div {
+    border: 2px solid #000;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* Form Input Styles */
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #bf9f78;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #bf9f78;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
