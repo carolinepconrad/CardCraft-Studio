@@ -13,7 +13,7 @@
 <!-- Header Section with Navbar -->
 <nav class="navbar navbar-expand-lg" style="background-color: #bf9f78;">
     <div class="container-fluid">
-        <img src="logonobg.png" width="70" >
+        <img src="http://localhost:3000/Images/logonobg.png" width="70" >
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
@@ -26,7 +26,7 @@
                     <a class="nav-link" href="CartPage/cart.html">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="User_Preferences/User_Preferences.php">User</a>
+                    <a class="nav-link" href="http://localhost:3000/is_user_logged_in.php">User</a>
                 </li>
             </ul>
         </div>
@@ -80,6 +80,9 @@
                     <br>
                     <br>
                     <input type="submit" value="Submit">
+                </form>
+                <form action="http://localhost:3000/log_out_user.php">;
+                <input class="button" type="submit" value="Log Out" name="log_out">
                 </form>
             </div>
         </center>
