@@ -28,14 +28,17 @@
           <!-- Header Section with Navbar -->
           <nav class="navbar navbar-expand-lg custom-navbar">
             <div class="container-fluid">
-              <img src="images/logonobg.png" width="70" >
+              <!-- Logo on the left -->
+              <a class="navbar-brand" href="#">
+                <img src="images/logonobg.png" width="70" alt="Logo" />
+              </a>
+              <!-- Navbar toggle button for smaller screens -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- Links aligned to the right -->
               <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav ms-auto"></ul>
-                  <li class="nav-item">
-                    <a class="nav-link">CardCraft Studio</a>
-                  </li>
+                <ul class="navbar-nav ms-auto"> <!-- ms-auto pushes the links to the right -->
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                   </li>
