@@ -9,28 +9,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
   <!-- Header with Navbar -->
-
-<nav class="navbar navbar-expand-lg" style="background-color: #bf9f78;">
-  <div class="container-fluid">
-      <img src="http://localhost:3000/Images/logonobg.png" width="70" >
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="http://localhost:3000/index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="SearchPage/search.html">Search</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="CartPage/cart.html">Cart</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link"  href="http://localhost:3000/is_user_logged_in.php">User</a>
-              </li>
-          </ul>
-      </div>
-  </div>
-</nav>
+  <?php require '../header.php'; ?>
+       
   <!-- Main Section -->
   <div class="grid-container-element">
     <!-- Login Section -->

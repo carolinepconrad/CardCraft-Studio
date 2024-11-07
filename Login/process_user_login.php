@@ -1,7 +1,7 @@
 <?php 
 // Button to go home
 echo 'This Would Automatically Redirect Home if the Login was Successful';
-echo '<form action="http://localhost:3000/index.html">';
+echo '<form action="http://localhost:3000/index.php">';
     echo '<input class="button" type="submit" value="Home">';
     echo '</form>';
     
