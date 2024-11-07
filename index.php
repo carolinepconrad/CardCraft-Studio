@@ -11,7 +11,34 @@
 <body>
 
 <?php include 'header.php'; ?>
-       
+      <!-- Header Section with Navbar -->
+      <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+              <!-- Logo on the left -->
+              <a class="navbar-brand" href="#">
+                <img src="images/logonobg.png" width="70" alt="Logo" />
+              </a>
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <span class="navbar-brand-title">CARDCRAFT STUDIO</span>
+              
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html"><img src="images/home.png" width="25"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="SearchPage/search.html"><img src="images/search.png" width="20"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="CartPage/cart.html"><img src="images/cart.png" width="20"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="is_user_logged_in.php"><img src="images/user.png" width="20"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav> 
 
     <!-- Main Section -->
     <section id="firstSection" class="hero">
