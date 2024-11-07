@@ -25,7 +25,7 @@
                 <br>
                 <img src="logonobg.png" width="150">
                 <br />
-                <form action="user_preferences.php" method="POST">
+                <form action="temporarily_renamed.php" method="POST">
                     <button type="button">Change Profile Image</button>
                     <br>
                     <input type="text" name="fn" id="fn" placeholder="First Name" required>
@@ -40,7 +40,7 @@
 
                 <ins><h2>Appearance:</h2></ins>
                 <br>
-                <form action="user_preferences.php" method="POST">
+                <form action="temporarily_renamed.php" method="POST">
                     <label for="theme">Theme:</label>
                     <select id="theme" name="theme">
                         <option value="light">Light</option>

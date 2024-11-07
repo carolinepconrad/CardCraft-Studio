@@ -1,7 +1,7 @@
 <?php 
 // Button to go home
 echo 'This Would Automatically Redirect Home if the Login was Successful';
-echo '<form action="http://localhost:3000/index.php">';
+echo '<form action="../index.php">';
     echo '<input class="button" type="submit" value="Home">';
     echo '</form>';
     
@@ -10,7 +10,7 @@ $inputUsername = $_POST['username'];
 $inputPassword = $_POST['password'];
 setcookie('logged_in', $inputUsername, time() + 86400, "/");
 
-include 'db_login_connect.php';
+require 'db_login_connect.php';
 
 
 

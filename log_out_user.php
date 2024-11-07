@@ -1,6 +1,6 @@
 <?php
   setcookie('logged_in', "0", time() - 86400, "/");
-  header('Location: Login/login_page.html');
+  header('Location: ../Login/login_page.php');
   exit;
 ?>
     
