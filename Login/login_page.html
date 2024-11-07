@@ -5,18 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login_styles.css">
     <title>CardCraft Studio</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
-  <div id="headerPlace">HEADER PLACE HOLDER</div>
+  <!-- Header with Navbar -->
+
+<nav class="navbar navbar-expand-lg" style="background-color: #bf9f78;">
+  <div class="container-fluid">
+      <img src="http://localhost:3000/Images/logonobg.png" width="70" >
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="http://localhost:3000/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="SearchPage/search.html">Search</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="CartPage/cart.html">Cart</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:3000/User_Preferences/User_Preferences.php">User</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
   <!-- Main Section -->
-  <div class="grid-container-element" id="aboutUs" class="aboutUs">
+  <div class="grid-container-element">
     <!-- Login Section -->
-    <section id="testimonials" class="testimonials">
+    <section id="login" class="login">
     <div class="grid-child-element red">
       <body>
-        <h2>Login Form</h2>
+        <h2>Login</h2>
         <div class="form__group field">
-          <form action="process_login.php" method="post" >
+          <form action="process_use_login.php" method="post" >
             <label class="form__label" for="username" >Username:</label>            
             <input class="form__field" type="text" name="username" id="username" required>
             <label class="form__label" for="username" >Password:</label>
@@ -28,7 +51,7 @@
     </div>
     </section>
     <!-- Create Login Section -->
-    <section id="testimonials" class="testimonials">
+    <section id="login" class="login">
       <div class="grid-child-element green">
           <body>
             <h2>Create Login</h2>
