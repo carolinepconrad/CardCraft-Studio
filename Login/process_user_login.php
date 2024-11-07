@@ -29,12 +29,12 @@ $sql = "SELECT * FROM users WHERE username = '$inputUsername' AND password_hash 
 $result = mysqli_query($conn, $sql);
 
 // Check if a matching user was found
-//if (mysqli_num_rows($result) > 0) {
-    //setcookie('logged_in', $username, time() + 86400, "/");
+if (mysqli_num_rows($result) > 0) {
+    setcookie('logged_in', $username, time() + 86400, "/");
 
-//} else {
-    //echo "Invalid username or password.";
-//}
+} else {
+    echo "Invalid username or password.";
+}
 
 // Close the database connection
 mysqli_close($conn);

@@ -2,7 +2,7 @@
 // Database configuration
 $servername = "54.165.204.136";
 $username = "group3";
-$password = "qux219jmv754";
+$password = "qux219jmV754[";
 $dbname = "group3";
 
 // Create a connection
