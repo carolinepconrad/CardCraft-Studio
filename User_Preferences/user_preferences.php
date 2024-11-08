@@ -14,8 +14,6 @@
 <?php include '../header.php'; ?>
        
 
-       
-
 <!-- User Preferences Page -->
 <div style="background-color:#f2e1d8; padding-left: 500px; padding-right: 500px; padding-bottom: 50px; padding-top: 50px;">
     <section>

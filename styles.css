@@ -21,17 +21,7 @@ body {
 }
 
 /* First Section Styling */
-#firstSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    color: #fff7f0;
-    background: #4d0b17;
-    padding: 20px;
-    text-align: center;
-}
+
 
 #firstSection h1 {
     font-size: 7.5em;
@@ -101,7 +91,7 @@ body {
 /* Gallery Section Styling */
 .gallery {
     background-color:  #f2e1d8;
-    padding: 40px 10%;
+    padding: 50px 10%;
     text-align: center;
 }
 
