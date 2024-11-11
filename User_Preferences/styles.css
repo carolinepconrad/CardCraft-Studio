@@ -6,16 +6,6 @@ body {
     background-color: #f2e1d8;
 }
 
-/* Navbar styling */
-.navbar {
-    background-color: #bf9f78;
-    padding-top: 5px;  
-    padding-bottom: 5px; 
-}
-
-.navbar img {
-    width: 70px;
-}
 
 /* Section for User Preferences */
 section {

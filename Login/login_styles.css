@@ -65,16 +65,6 @@ body {
 
 
 
-/* Navbar styling */
-.navbar {
-    background-color: #bf9f78;
-    padding-top: 5px;  
-    padding-bottom: 5px; 
-}
-
-.navbar img {
-    width: 70px;
-}
 
 /* Login Section Styling */
 .login {

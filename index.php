@@ -6,11 +6,12 @@
   <link rel="stylesheet" href="styles.css">
   <title>CardCraft Studio</title>
 </head>
+<?php include 'header.php'; ?>
+
 <body style="background-color: #f2e1d8;">
 <!-- Main Section -->
 <section id="firstSection" class="hero">
   <nav style="position: absolute; top: 0; width: 100%; z-index: 10">
-  <?php include 'header.php'; ?>
   </nav>
   <div style="position: relative; width: 100%; height: auto; max-height: 985px; overflow: hidden;">
   <video autoplay muted loop id="bgvideo" style="width: 100%; height: auto;">

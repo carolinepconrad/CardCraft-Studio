@@ -10,7 +10,6 @@
 </head>
   <!-- Header with Navbar -->
   <?php require '../header.php'; ?>
-       
   <!-- Main Section -->
   <div class="grid-container-element">
     <!-- Login Section -->
