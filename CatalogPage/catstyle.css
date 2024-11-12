@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #333;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Bigshot One', cursive;
+    margin-bottom: -100px;
+
+
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+
+  }
+  
+  .catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+    margin-left: 200px;
+    margin-top: -700px;
+  }
+  
+  .product-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 22%;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .product-card h2 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+  
+  .product-card p {
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  .product-card button {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #a62e2e;
+  }
+  
+  .sidebar {
+    position: sticky;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: beige;
+    padding-top: 20px;
+    padding-left: 10px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+  }
+  
+  .sidebar ul li {
+    margin: 20px 0;
+  }
+  
+  .sidebar ul li a {
+    color: rgb(14, 14, 14);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #ddd;
+  }
+  
+  
