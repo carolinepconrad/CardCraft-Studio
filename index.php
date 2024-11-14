@@ -66,12 +66,12 @@
 <!-- About Us Section -->
 <section id="aboutUs" class="about">
   <h2>About Us</h2>
-  <p>A Christmas card-selling business that sells a variety of cards with a wide 
-    selection of designs to choose from. Sells digital cards as well as physical ones 
-    sending the digital ones through email. Physical cards can come with an envelope already
-    addressed to the North Pole! The data that will need to be stored is a card catalog with 
-    all the unique card designs. This will include both the physical and digital designs as well 
-    as an inventory amount for each item.</p>
+  <p>We’re a holiday card business that brings the magic of Christmas to life with a delightful
+    variety of card designs, perfect for spreading joy this season! From digital cards that arrive
+    straight to your inbox to beautifully crafted physical cards, we offer something special for everyone.
+    Our physical cards can even be addressed directly to the North Pole, adding an extra touch of holiday cheer!
+    Our catalog features a wide range of unique designs, with options for both digital and physical cards.
+    We carefully manage our inventory to ensure each item is available to make your holiday celebrations complete.</p>
 </section>
 
 <!-- Contact Us Section -->
