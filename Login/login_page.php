@@ -35,7 +35,7 @@
           <body>
             <h2>Create Login</h2>
             <div class="form__group field">
-            <form action="create_login_final.php" method="post">
+            <form action="create_user_login.php" method="post">
               <label class="form__label" for="first_name">First Name:</label>
               <input class="form__field" type="text" name="first_name" id="first_name" required><br><br>
               <label class="form__label" for="last_name">Last Name:</label>
@@ -44,6 +44,8 @@
               <input class="form__field" type="text" name="username" id="username" required><br><br>
               <label class="form__label" for="password">Password:</label>
               <input class="form__field" type="password" name="password" id="password" required><br><br>
+              <label class="form__label" for="password">Address:</label>
+              <input class="form__field" type="text" name="address" id="address" required><br><br>
               <input class="button" type="submit" value="Create Login" name="create_login">
             </form>
             </div>
