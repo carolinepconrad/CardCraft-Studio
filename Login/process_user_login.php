@@ -1,14 +1,10 @@
 <?php 
-// Button to go home
-echo 'This Would Automatically Redirect Home if the Login was Successful';
-echo '<form action="../index.php">';
-    echo '<input class="button" type="submit" value="Home">';
-    echo '</form>';
+
     
 // Get the username and password from the form
 $inputUsername = $_POST['username'];
 $inputPassword = $_POST['password'];
-setcookie('logged_in', $inputUsername, time() + 86400, "/");
+//setcookie('logged_in', $inputUsername, time() + 86400, "/");
 
 require 'db_login_connect.php';
 
@@ -31,9 +27,16 @@ $result = mysqli_query($conn, $sql);
 // Check if a matching user was found
 if (mysqli_num_rows($result) > 0) {
     setcookie('logged_in', $username, time() + 86400, "/");
+    header('Location: ../index.php');
 
 } else {
     echo "Invalid username or password.";
+// Button to go home
+
+echo '<form action="../Login/login_page.php">';
+echo '<input class="button" type="submit" value="Home">';
+echo '</form>';
+
 }
 
 // Close the database connection
