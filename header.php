@@ -45,7 +45,7 @@
           
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php"><img src="../images/home.png" width="25"></a>
+                <a class="nav-link active" aria-current="page" href="../index.php"><img src="../images/home.png" width="25"></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../SearchPage/search.html"><img src="../images/search.png" width="20"></a>
