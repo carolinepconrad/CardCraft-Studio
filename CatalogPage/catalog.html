@@ -51,8 +51,44 @@
     <!-- Side navigation bar -->
     <nav class="sidebar">
       <ul>
-        <li><a href="#">Insert form for advanced Search</a></li>
-        <li><button> Search </button></li>
+        <li><h2> Search</h2></li>
+
+        <li>
+          <form action="search.php"class="d-flex" method="get">
+            <input 
+              class="form-control me-2"
+              type="search"
+              name="search"
+              placeholder="Search for items..."
+              aria-label="Search"
+            />
+        </li>
+                <form action="a_search.php" method="get">
+            <div>
+            <li>  <select id="color" name="color"></li>
+                    <option value="">Select Color</option> <!--This will be determined by the main bg color of the card-->
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="tan">Tan</option>
+                    <option value="pink">Pink</option>
+        
+                </select>
+
+            </div>
+            <div>
+              <li>  <select id="style" name="style"></li>
+                      <option value="">Select Style</option>
+                      <option value="modern">Modern</option>
+                      <option value="simple">Simple</option>
+                      <option value="classic">Classic</option>
+                      <option value="abstract">Abstract</option>
+                      <option value="playful">Playful</option>
+          
+                  </select>
+  
+              </div>
    
       </ul>
     </nav>
