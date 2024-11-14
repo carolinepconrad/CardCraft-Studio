@@ -19,7 +19,7 @@
         <h2>Login</h2>
         <div class="form__group field">
           <form action="process_user_login.php" method="post" >
-            <label class="form__label" for="username" >Username:</label>            
+            <label class="form__label" for="username" >Email:</label>            
             <input class="form__field" type="text" name="username" id="username" required>
             <label class="form__label" for="username" >Password:</label>
             <input class="form__field" type="password" name="password"id="password" required>
@@ -40,11 +40,11 @@
               <input class="form__field" type="text" name="first_name" id="first_name" required><br><br>
               <label class="form__label" for="last_name">Last Name:</label>
               <input class="form__field" type="text" name="last_name" id="last_name" required><br><br>
-              <label class="form__label" for="username">Username:</label>
+              <label class="form__label" for="username">Email:</label>
               <input class="form__field" type="text" name="username" id="username" required><br><br>
               <label class="form__label" for="password">Password:</label>
               <input class="form__field" type="password" name="password" id="password" required><br><br>
-              <label class="form__label" for="password">Address:</label>
+              <label class="form__label" for="address">Address:</label>
               <input class="form__field" type="text" name="address" id="address" required><br><br>
               <input class="button" type="submit" value="Create Login" name="create_login">
             </form>

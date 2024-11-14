@@ -20,23 +20,25 @@ $inputUsername = $_POST['username'];
 $inputPassword = $_POST['password'];
 $address = $_POST['address'];
 // Hash the input password using SHA-256
-$hashedPassword = hash("sha256", $inputPassword);
 
-// Query to check the user's credentials
-$sql = "INSERT INTO users (username, password_hash, first_name, last_name, address) VALUES ($inputUsername, $hashedPassword, $firstName, $lastName, $address);";
+$sql = "SELECT * FROM users WHERE username = '$inputUsername' ";
 $result = mysqli_query($conn, $sql);
+
+// Check if a matching user was found
 if (mysqli_num_rows($result) > 0) {
-    setcookie('logged_in', $username, time() + 86400, "/");
-    header('Location: ../index.php');
-} else {
-    echo "Username or password already taken!";
-    // Button to go home
+    echo "Choose another username! ";
+// Button to go home
 echo '<form action="../Login/login_page.php">';
 echo '<input class="button" type="submit" value="Home">';
 echo '</form>';
-
+} else {
+    $sql = "INSERT INTO users (username, password_hash, first_name, last_name, address) VALUES ('$inputUsername',  SHA2('$inputPassword', 256), '$firstName', '$lastName', '$address');";
+    $result = mysqli_query($conn, $sql);
+setcookie('logged_in', $username, time() + 86400, "/");
+header('Location: ../index.php');
 
 }
+
 
 
 // Close the database connection
