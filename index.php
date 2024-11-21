@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="styles.css">
   <title>CardCraft Studio</title>
 </head>
+
+<!-- Header -->
 <?php include 'header.php'; ?>
 
 <body style="background-color: #f2e1d8;">
@@ -83,9 +85,7 @@
 </section>
 
 <!-- Footer -->
-<footer>
-  <p>&copy; 2024 CardCraft Studio. All rights reserved.</p>
-</footer>
+<?php include 'footer.php'; ?>
 
 </body>
 </html>
