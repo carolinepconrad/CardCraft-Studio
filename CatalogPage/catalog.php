@@ -52,20 +52,6 @@
     <nav class="sidebar">
       <ul>
         <li><h2> Search</h2></li>
-
-        <li>
-          <form action="search.php"class="d-flex" method="get">
-            <input 
-              class="form-control me-2"
-              type="search"
-              name="search"
-              placeholder="Search for items..."
-              aria-label="Search"
-            /> 
-            <button class="btn btn-outline-success" type="submit" href="search.php">
-              Search
-            </button>
-        </li>
                 <form action="a_search.php" method="get" class="formstyle">
             <div>
             <li>  <select id="color" name="color"></li>
@@ -94,7 +80,7 @@
                   </select>
   
               </div>
-              <div>
+              <!-- <div>
                 <li>  <select id="price" name="price"></li>
                         <option value="">Select Price</option>
                         <option value="5">Under $5</option>
@@ -104,7 +90,7 @@
             
                     </select>
     
-                </div>
+                </div> -->
                 <button class="" type="submit" href="a_search.php">
                   Search
                 </button>
