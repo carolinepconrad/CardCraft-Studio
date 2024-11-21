@@ -1,0 +1,14 @@
+/* Footer Styling */
+footer {
+    background-color: #bf9f78;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+
