@@ -12,8 +12,17 @@
 
 <!-- Header Section with Navbar -->
 <?php include '../header.php'; ?>
-       
+<!-- Getting Current User_Prefernces -->
+ <?php require '../Login/db_login_connect.php'; 
+ $username = $_COOKIE['logged_in'];
+ $sql = "SELECT * FROM users WHERE username = '$username'";
+ $result = mysqli_query($conn, $sql);
+ while($row = mysqli_fetch_array($result)) {
+    $first_name = $row["first_name"];
+    $last_name = $row["last_name"];
+}
 
+?>
 <!-- User Preferences Page -->
 <div style="background-color:#f2e1d8; padding-left: 500px; padding-right: 500px; padding-bottom: 50px; padding-top: 50px;">
     <section>
@@ -26,10 +35,10 @@
                 <form action="temporarily_renamed.php" method="POST">
                     <button type="button">Change Profile Image</button>
                     <br>
-                    <input type="text" name="fn" id="fn" placeholder="First Name" required>
-                    <input type="text" name="ln" id="ln" placeholder="Last Name" required>
+                    <input type="text" name="fn" id="fn" placeholder="<?php echo $first_name?>" required>
+                    <input type="text" name="ln" id="ln" placeholder="<?php echo $last_name?>" required>
                     <br>
-                    <input type="email" name="em" id="em" placeholder="Email" required>
+                    <input type="email" name="em" id="em" placeholder="<?php echo $username?>" required>
                     <br>
                     <input type="submit" value="Submit">
                 </form>

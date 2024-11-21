@@ -26,7 +26,7 @@ $result = mysqli_query($conn, $sql);
 
 // Check if a matching user was found
 if (mysqli_num_rows($result) > 0) {
-    setcookie('logged_in', $username, time() + 86400, "/");
+    setcookie('logged_in', $inputUsername, time() + 86400, "/");
     header('Location: ../index.php');
 
 } else {

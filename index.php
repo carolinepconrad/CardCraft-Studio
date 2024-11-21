@@ -28,21 +28,21 @@
   <div class="gallery-grid">
     <!-- Product 1 -->
     <div class="product-card">
-      <img src="images/product1.jpg" alt="Product 1">
+      <img src="images/card1.jpg" alt="Product 1">
       <h3>Product 1</h3>
       <p>$19.99</p>
     </div>
 
     <!-- Product 2 -->
     <div class="product-card">
-      <img src="images/product2.jpg" alt="Product 2">
+      <img src="images/card2.jpg" alt="Product 2">
       <h3>Product 2</h3>
       <p>$24.99</p>
     </div>
 
     <!-- Product 3 -->
     <div class="product-card">
-      <img src="images/product3.jpg" alt="Product 3">
+      <img src="images/card4.jpg" alt="Product 3">
       <h3>All Products</h3>
     </div>
   </section>

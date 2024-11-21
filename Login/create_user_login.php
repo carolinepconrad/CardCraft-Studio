@@ -34,7 +34,7 @@ echo '</form>';
 } else {
     $sql = "INSERT INTO users (username, password_hash, first_name, last_name, address) VALUES ('$inputUsername',  SHA2('$inputPassword', 256), '$firstName', '$lastName', '$address');";
     $result = mysqli_query($conn, $sql);
-setcookie('logged_in', $username, time() + 86400, "/");
+setcookie('logged_in', $inputUsername, time() + 86400, "/");
 header('Location: ../index.php');
 
 }
