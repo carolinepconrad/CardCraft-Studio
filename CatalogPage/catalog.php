@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Catalog</title>
   <link rel="stylesheet" href="catstyle.css">
+
 </head>
+
 <body>
- <!-- <?php include 'header.php'; ?> -->
 <!-- SNOWFLAKE EFFECT-->
 <div class="snowflakes" aria-hidden="true">
   <div class="snowflake">
@@ -23,7 +24,7 @@
     <div class="inner">❄</div>
   </div>
   <div class="snowflake">
-    <div class="inner">❄</div>
+    <div class="inner">❄</div> 
   </div>
   <div class="snowflake">
     <div class="inner">❄</div>
@@ -51,49 +52,50 @@
     <!-- Side navigation bar -->
     <nav class="sidebar">
       <ul>
-        <li><h2> Search</h2></li>
-                <form action="a_search.php" method="get" class="formstyle">
-            <div>
-            <li>  <select id="color" name="color"></li>
-                    <option value="">Select Color</option> <!--This will be determined by the main bg color of the card-->
-                    <option value="white">White</option>
-                    <option value="red">Red</option>
-                    <option value="green">Green</option>
-                    <option value="blue">Blue</option>
-                    <option value="tan">Tan</option>
-                    <option value="pink">Pink</option>
-                    <option value="black">Black</option>
+      <h2>Search</h2>
+<form action="a_search.php" method="get" class="formstyle">
+  <div>
+    <label for="color">Color:</label>
+    <select id="color" name="color">
+      <option value="">Select Color</option>
+      <option value="white">White</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="tan">Tan</option>
+      <option value="pink">Pink</option>
+      <option value="black">Black</option>
+    </select>
+  </div>
 
-        
-                </select>
+  <div>
+    <label for="style">Style:</label>
+    <select id="style" name="style">
+      <option value="">Select Style</option>
+      <option value="modern">Modern</option>
+      <option value="simple">Simple</option>
+      <option value="classic">Classic</option>
+      <option value="abstract">Abstract</option>
+      <option value="playful">Playful</option>
+    </select>
+  </div>
 
-            </div>
-            <div>
-              <li>  <select id="style" name="style"></li>
-                      <option value="">Select Style</option>
-                      <option value="modern">Modern</option>
-                      <option value="simple">Simple</option>
-                      <option value="classic">Classic</option>
-                      <option value="abstract">Abstract</option>
-                      <option value="playful">Playful</option>
-          
-                  </select>
-  
-              </div>
-              <!-- <div>
-                <li>  <select id="price" name="price"></li>
-                        <option value="">Select Price</option>
-                        <option value="5">Under $5</option>
-                        <option value="10">Under $10</option>
-                        <option value="sale">Sale</option>
-              
-            
-                    </select>
-    
-                </div> -->
-                <button class="" type="submit" href="a_search.php">
-                  Search
-                </button>
+  <!-- Uncomment and edit this section if you want to include the price dropdown -->
+  <!-- 
+  <div>
+    <label for="price">Price:</label>
+    <select id="price" name="price">
+      <option value="">Select Price</option>
+      <option value="5">Under $5</option>
+      <option value="10">Under $10</option>
+      <option value="sale">Sale</option>
+    </select>
+  </div>
+  -->
+
+  <button type="submit">Search</button>
+</form>
+
    
       </ul>
     </nav>

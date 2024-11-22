@@ -1,26 +1,25 @@
-Product Name,Image Path,Color,Style
-Product 1,/images/catalog/1.png,tan,classic
-Product 2,/images/catalog/2.png,tan,playful
-Product 3,/images/catalog/3.png,red,playful
-Product 5,/images/catalog/5.png,white,simple
-Product 6,/images/catalog/6.png,tan,modern
-Product 7,/images/catalog/7.png,green,playful
-Product 8,/images/catalog/8.png,red,modern
-Product 9,/images/catalog/9.png,pink,simple
-Product 10,/images/catalog/10.png,white,playful
-Product 11,/images/catalog/11.png,red,modern
-Product 12,/images/catalog/12.png,tan,simple
-Product 13,/images/catalog/13.png,blue,playful
-Product 14,/images/catalog/14.png,white,abstract
-Product 15,/images/catalog/15.png,blue,playful
-Product 16,/images/catalog/16.png,red,simple
-Product 17,/images/catalog/17.png,red,classic
-Product 18,/images/catalog/18.png,tan,classic
-Product 19,/images/catalog/19.png,green,simple
-Product 20,/images/catalog/20.png,blue,playful
-Product 22,/images/catalog/22.png,white,playful
-Product 23,/images/catalog/23.png,tan,simple
-Product 24,/images/catalog/24.png,pink,modern
-Product 25,/images/catalog/25.png,tan,simple
-Product 26,/images/catalog/26.png,black,abstract
-
+product_name,image_path,color,style
+Product1,/images/catalog/1.png,tan,classic
+Product2,/images/catalog/2.png,tan,playful
+Product3,/images/catalog/3.png,red,playful
+Product5,/images/catalog/5.png,white,simple
+Product6,/images/catalog/6.png,tan,modern
+Product7,/images/catalog/7.png,green,playful
+Product8,/images/catalog/8.png,red,modern
+Product9,/images/catalog/9.png,pink,simple
+Product10,/images/catalog/10.png,white,playful
+Product11,/images/catalog/11.png,red,modern
+Product12,/images/catalog/12.png,tan,simple
+Product13,/images/catalog/13.png,blue,playful
+Product14,/images/catalog/14.png,white,abstract
+Product15,/images/catalog/15.png,blue,playful
+Product16,/images/catalog/16.png,red,simple
+Product17,/images/catalog/17.png,red,classic
+Product18,/images/catalog/18.png,tan,classic
+Product19,/images/catalog/19.png,green,simple
+Product20,/images/catalog/20.png,blue,playful
+Product22,/images/catalog/22.png,white,playful
+Product23,/images/catalog/23.png,tan,simple
+Product24,/images/catalog/24.png,pink,modern
+Product25,/images/catalog/25.png,tan,simple
+Product26,/images/catalog/26.png,black,abstract
