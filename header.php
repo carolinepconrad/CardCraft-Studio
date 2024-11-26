@@ -28,7 +28,7 @@
           <a class="nav-link active" aria-current="page" href="../index.php"><img src="../images/home.png" width="25"></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../CatalogPage/catalog.html"><img src="../images/search.png" width="20"></a>
+          <a class="nav-link" href="../CatalogPage/catalog.php"><img src="../images/search.png" width="20"></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../CartPage/cart.html"><img src="../images/cart.png" width="20"></a>
