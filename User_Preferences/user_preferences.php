@@ -80,9 +80,7 @@
 </div>
 
 <!-- Footer Section -->
-<footer>
-    <p>&copy; 2024 CardCraft Studio. All rights reserved.</p>
-</footer>
+<?php include '../footer.php'; ?>
 
 </body>
 </html>
