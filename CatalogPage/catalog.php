@@ -48,7 +48,7 @@
     <div class="inner">❄</div>
   </div>
 </div>
-<?php include 'header.php'; ?>
+<?php include '../header.php'; ?>
 
 
     <!-- Side navigation bar -->
