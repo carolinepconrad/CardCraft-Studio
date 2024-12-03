@@ -19,13 +19,12 @@
     top: 0;
     width: 250px;
     height: 100vh;
-    background-color: #1c1e1c;
     color: #ffffff;
     padding: 20px 10px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   }
 
   .sidebar h2 {
+    padding-top: 10px;
     font-size: 1.5em;
     color: #ffcc00;
     margin-bottom: 20px;
@@ -59,7 +58,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f7f7f7;
-    color: #333;
+    color: black;
   }
 
   .formstyle select:focus {

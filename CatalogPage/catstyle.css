@@ -11,15 +11,13 @@
     background-color: #ffffff;
   }
   
- 
-  
   .catalog {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 2rem;
-    margin-left: 200px;
-    margin-top: -700px;
+    margin-left: 250px;
+    margin-top: -800px;
   }
   .product-card {
     position: relative; /* Needed for the button to be absolutely positioned within the card */
@@ -63,26 +61,6 @@
     width: 40px;
     height: auto;
   }
-  
-  .sidebar {
-    position: sticky;
-    top: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: rgb(27, 29, 27);
-    padding-top: 20px;
-    padding-left: 10px;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-  }
-  
-  .sidebar ul li {
-    margin: 20px;
-    margin-left: 10px;
-  }
-
   
   .product-card {
     position: relative;
