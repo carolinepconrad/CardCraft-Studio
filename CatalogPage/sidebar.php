@@ -21,23 +21,9 @@
     height: 100vh;
     color: #ffffff;
     padding: 20px 10px;
-  }
+    margin-left: 15px;
+    margin-top: 30px;
 
-  .sidebar h2 {
-    padding-top: 10px;
-    font-size: 1.5em;
-    color: #ffcc00;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .sidebar ul li {
-    margin: 20px 0;
   }
 
   .formstyle {
@@ -48,30 +34,38 @@
 
   .formstyle label {
     font-size: 1em;
-    color: #ffffff;
+    color: black;
     margin-bottom: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+
   }
 
   .formstyle select {
     padding: 8px;
+    width: 250px;
     font-size: 1em;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f7f7f7;
+    border-radius: 15px;
+    background-color: #ffffff;
     color: black;
+    font-family: 'Space Grotesk', sans-serif;
+
   }
 
   .formstyle select:focus {
     outline: none;
-    border-color: #ffcc00;
+    border-color: #1c1e1c;
+
   }
 
   .formstyle button {
-    padding: 10px 15px;
-    background-color: #074030;
+    padding: 10px 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #5C4033	;
     border: none;
-    border-radius: 5px;
-    color: #1c1e1c;
+    border-radius: 15px;
+    width:250px;
+    color: white;
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
@@ -79,18 +73,15 @@
   }
 
   .formstyle button:hover {
-    background-color: #e6b800;
+    background-color: #f0e6d2;
   }
 </style>
 
 
 </style>
  <nav class="sidebar">
-      <ul>
-      <h2>Search</h2>
 <form action="a_search.php" method="get" class="formstyle">
   <div>
-    <label for="color">Color:</label>
     <select id="color" name="color">
       <option value="">Select Color</option>
       <option value="white">White</option>
@@ -104,7 +95,6 @@
   </div>
 
   <div>
-    <label for="style">Style:</label>
     <select id="style" name="style">
       <option value="">Select Style</option>
       <option value="modern">Modern</option>
@@ -119,7 +109,6 @@
 </form>
 
    
-      </ul>
     </nav>
     </body>
     </html>

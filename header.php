@@ -12,7 +12,8 @@
   @import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 .custom-navbar {
-    background-color: #bf9f78;
+    background-color:#bf9f78 ;
+    
 }
 
 .navbar-nav .nav-link {
@@ -28,7 +29,7 @@
 }
 
 .navbar-brand-title {
-    color: #fff;
+    color: #1d1306;
     font-weight: bold;
     font-size: 1.5rem;
     font-family: 'Bigshot One', cursive;
@@ -37,7 +38,7 @@
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<!-- Header Section with Navbar -->
+<!-- Header Section with Navbar  -->
 <nav class="navbar navbar-expand-lg custom-navbar">
   <div class="container-fluid d-flex justify-content-between align-items-center">
     <!-- Logo on the left -->
