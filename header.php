@@ -56,7 +56,7 @@
           <a class="nav-link" href="../CatalogPage/catalog.php"><img src="../images/search.png" width="20"></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../CartPage/cart.html"><img src="../images/cart.png" width="20"></a>
+          <a class="nav-link" href="../CartPage/cart.php"><img src="../images/cart.png" width="20"></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../is_user_logged_in.php"><img src="../images/user.png" width="20"></a>
