@@ -9,24 +9,81 @@
     
 
 <style>
-    .sidebar {
+   body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .sidebar {
     position: sticky;
     top: 0;
-    width: 200px;
+    width: 250px;
     height: 100vh;
-    background-color: rgb(27, 29, 27);
-    padding-top: 20px;
-    padding-left: 10px;
+    background-color: #1c1e1c;
+    color: #ffffff;
+    padding: 20px 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   }
-  
+
+  .sidebar h2 {
+    font-size: 1.5em;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
   .sidebar ul {
     list-style-type: none;
+    padding: 0;
   }
-  
+
   .sidebar ul li {
-    margin: 20px;
-    margin-left: 10px;
+    margin: 20px 0;
   }
+
+  .formstyle {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .formstyle label {
+    font-size: 1em;
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+
+  .formstyle select {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+
+  .formstyle select:focus {
+    outline: none;
+    border-color: #ffcc00;
+  }
+
+  .formstyle button {
+    padding: 10px 15px;
+    background-color: #074030;
+    border: none;
+    border-radius: 5px;
+    color: #1c1e1c;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .formstyle button:hover {
+    background-color: #e6b800;
+  }
+</style>
+
 
 </style>
  <nav class="sidebar">

@@ -8,7 +8,32 @@
 </head>
 
 <body>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap');
 
+.custom-navbar {
+    background-color: #bf9f78;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f0e6d2 !important;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+.navbar-brand-title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Bigshot One', cursive;
+}
+</style>
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
 
