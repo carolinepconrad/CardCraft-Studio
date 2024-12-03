@@ -18,7 +18,7 @@
       <body>
         <h2>Login</h2>
         <div class="form__group field">
-          <form action="process_user_login.php" method="post" >
+          <form action="process_employee_login.php" method="post" >
             <label class="form__label" for="username" >Employee Number:</label>            
             <input class="form__field" type="text" name="username" id="username" required><br><br>
             <label class="form__label" for="username" >Password:</label>
@@ -35,7 +35,7 @@
           <body>
             <h2>Create Login</h2>
             <div class="form__group field">
-            <form action="create_user_login.php" method="post">
+            <form action="create_employee_login.php" method="post">
               <label class="form__label" for="first_name">First Name:</label>
               <input class="form__field" type="text" name="first_name" id="first_name" required><br><br>
               <label class="form__label" for="last_name">Last Name:</label>

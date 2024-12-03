@@ -21,7 +21,7 @@ die("Error: Required POST variables are not set.");
 $hashedPassword = hash("sha256", $inputPassword);
 
 // Query to check the user's credentials
-$sql = "SELECT * FROM users WHERE username = '$inputUsername' AND password_hash = '$hashedPassword'";
+$sql = "SELECT * FROM employees WHERE username = '$inputUsername' AND password_hash = '$hashedPassword'";
 $result = mysqli_query($conn, $sql);
 
 // Check if a matching user was found

@@ -18,7 +18,6 @@ $firstName = $_POST['first_name'];
 $lastName = $_POST['last_name'];
 $inputUsername = $_POST['username'];
 $inputPassword = $_POST['password'];
-$address = $_POST['address'];
 // Hash the input password using SHA-256
 
 $sql = "SELECT * FROM users WHERE username = '$inputUsername' ";
@@ -32,7 +31,7 @@ echo '<form action="../Login/login_page.php">';
 echo '<input class="button" type="submit" value="Home">';
 echo '</form>';
 } else {
-    $sql = "INSERT INTO users (username, password_hash, first_name, last_name, address) VALUES ('$inputUsername',  SHA2('$inputPassword', 256), '$firstName', '$lastName', '$address');";
+    $sql = "INSERT INTO users (username, password_hash, first_name, last_name) VALUES ('$inputUsername',  SHA2('$inputPassword', 256), '$firstName', '$lastName');";
     $result = mysqli_query($conn, $sql);
 setcookie('logged_in', $inputUsername, time() + 86400, "/");
 header('Location: ../index.php');
