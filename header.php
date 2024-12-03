@@ -13,10 +13,6 @@
 
 .custom-navbar {
     background-color:#b1988f;
-   
-  
-    
-    
 }
 
 .navbar-nav .nav-link {

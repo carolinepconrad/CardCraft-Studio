@@ -2,32 +2,30 @@
 .catalog {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 2rem;
     margin-left: 250px;
-    margin-right: 50px;
-
-    margin-top: -700px;
-}
-
-.product-card {
-    position: relative;
-    width: 30%; /* Adjust width for 3 items per row */
+    margin-top: -800px;
+  }
+  .product-card {
+    position: relative; /* Needed for the button to be absolutely positioned within the card */
+    width: 30%;
+    margin: 0.5rem;
     padding: 1rem;
     text-align: center;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: hidden; /* Ensures the button doesn’t overflow the card's boundaries */
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card img {
+  }
+  
+  .product-card img {
     display: block;
     width: 100%;
     border-radius: 10px;
-}
-
-.product-card button {
+  }
+  
+  .product-card button {
     position: absolute;
     top: 0;
     left: 0;
@@ -40,22 +38,55 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.product-card:hover button {
+  }
+  
+  .product-card:hover button {
     opacity: 1;
     background-color: rgba(255, 255, 255, 0.751);
-}
-
-.product-card button img {
+  }
+  
+  .product-card button img {
     width: 40px;
     height: auto;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
-}
+  }
+  
+  .product-card {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-card img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .product-card button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .product-card:hover button {
+    opacity: 1;
+  }
+  
+  
+  
 
 
 

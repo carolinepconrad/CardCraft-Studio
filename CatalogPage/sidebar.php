@@ -20,7 +20,7 @@
     width: 250px;
     height: 100vh;
     color: #ffffff;
-    padding: 20px 10px;
+    padding: 20px 20px;
     margin-left: 15px;
     margin-top: 30px;
 
@@ -73,7 +73,7 @@
   }
 
   .formstyle button:hover {
-    background-color: #f0e6d2;
+    background-color: #1d1306;
   }
 </style>
 
