@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
 <!-- SNOWFLAKE EFFECT-->
 <div class="snowflakes" aria-hidden="true">
   <div class="snowflake">
@@ -49,10 +50,12 @@
   </div>
 </div>
 <?php include '../header.php'; ?>
+<?php include 'sidebar.php'; ?>
+
 
 
     <!-- Side navigation bar -->
-    <nav class="sidebar">
+    <!-- <nav class="sidebar">
       <ul>
       <h2>Search</h2>
 <form action="a_search.php" method="get" class="formstyle">
@@ -82,25 +85,12 @@
     </select>
   </div>
 
-  <!-- Uncomment and edit this section if you want to include the price dropdown -->
-  <!-- 
-  <div>
-    <label for="price">Price:</label>
-    <select id="price" name="price">
-      <option value="">Select Price</option>
-      <option value="5">Under $5</option>
-      <option value="10">Under $10</option>
-      <option value="sale">Sale</option>
-    </select>
-  </div>
-  -->
-
   <button type="submit">Search</button>
 </form>
 
    
       </ul>
-    </nav>
+    </nav> -->
 
   <section class="catalog">
     <div class="product-card">
@@ -198,8 +188,8 @@
       <button><img src="/images/catalog/add-to-cart.png" alt="add to cart"></button>
     </div>
   </section>
+  <?php include '../footer.php'; ?>
 
 </body>
-<?php include '../footer.php'; ?>
 
 </html>
