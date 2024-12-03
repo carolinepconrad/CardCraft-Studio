@@ -36,6 +36,8 @@ $output = array_filter($data, function ($row) use ($style, $color) {
 
 // Display the filtered products dynamically as cards
 if (!empty($output)) {
+    include '../header.php';
+    include '';
 
     echo "<section class='catalog'>";
     foreach ($output as $row) {
