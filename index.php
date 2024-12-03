@@ -26,28 +26,30 @@
 
 <!-- Gallery Section -->
 <section class="gallery">
-  <h2>Our Product Gallery</h2>
+  <h2>Newest Editions</h2>
   <div class="gallery-grid">
     <!-- Product 1 -->
     <div class="product-card">
       <img src="../Images/catalog/1.png" alt="Product 1">
-      <h3>Product 1</h3>
-      <p>$19.99</p>
+      <h1>View Products</h1>
+
     </div>
 
     <!-- Product 2 -->
     <div class="product-card">
-      <img src="/Images/catalog/2.jpg" alt="Product 2">
-      <h3>Product 2</h3>
-      <p>$24.99</p>
+      <img src="../Images/catalog/12.png" alt="Product 2">
+            <h1>View Products</h1>
+
     </div>
 
     <!-- Product 3 -->
     <div class="product-card">
-      <img src="../Images/catalog/4.jpg" alt="Product 3">
-      <h3>All Products</h3>
+      <img src="../Images/catalog/16.png" alt="Product 3">
     </div>
+
+    <div></div>
   </section>
+
   
 
 

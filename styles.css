@@ -115,12 +115,16 @@ body {
     padding: 40px 10%;
     color: #333;
     text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+
 }
 
 #aboutUs h2 {
     color:#8C031C;
     font-size: 2.5em;
     margin-bottom: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+
 }
 
 #aboutUs p {
@@ -137,13 +141,15 @@ body {
 .gallery {
     padding: 40px 20px;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #b1988f;
   }
   
   .gallery h2 {
     font-size: 2em;
     margin-bottom: 30px;
-    color: #333;
+    color: #efefef;
+    font-family: 'Space Grotesk', sans-serif;
+
   }
   
   .gallery-grid {
@@ -160,10 +166,29 @@ body {
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    font-family: 'Space Grotesk', sans-serif;
+  
+
+  }
+  .product-card h1 {
+    opacity: 0;
+    margin-top: -200px;
+  }
+ 
+  .product-card:hover h1 {
+    opacity: 1;
+    margin-top: -175px;
+
   }
   
   .product-card:hover {
     transform: scale(1.05);
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.99);
+  }
+
+  .product-card:hover img {
+    opacity: 0.1;
   }
   
   .product-card img {
@@ -173,16 +198,6 @@ body {
     margin-bottom: 10px;
   }
   
-  .product-card h3 {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 5px;
-  }
-  
-  .product-card p {
-    font-size: 1em;
-    color: #666;
-  }
   
   /* Responsive Design */
   @media (max-width: 768px) {
@@ -206,9 +221,11 @@ body {
 }
 
 .testimonials h2 {
-    color: #8C031C;
+    color: #b1988f;
     font-size: 2.5em;
     margin-bottom: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+
 }
 
 .testimonial {

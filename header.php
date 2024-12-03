@@ -12,7 +12,10 @@
   @import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 .custom-navbar {
-    background-color:#bf9f78 ;
+    background-color:#b1988f;
+   
+  
+    
     
 }
 
