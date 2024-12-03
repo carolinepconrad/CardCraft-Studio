@@ -16,7 +16,7 @@
 <nav class="navbar navbar-expand-lg custom-navbar">
   <div class="container-fluid d-flex justify-content-between align-items-center">
     <!-- Logo on the left -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="../index">
       <img src="../../images/logonobg.png" width="70" alt="Logo" />
     </a>
 
