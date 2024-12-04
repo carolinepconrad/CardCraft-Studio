@@ -169,12 +169,12 @@ body {
   
 
   }
-  .product-card h1 {
+  .product-card a {
     opacity: 0;
     margin-top: -200px;
   }
  
-  .product-card:hover h1 {
+  .product-card:hover a {
     opacity: 1;
     margin-top: -175px;
     color: #b1988f;

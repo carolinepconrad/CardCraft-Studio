@@ -31,27 +31,27 @@
     <!-- Product 1 -->
     <div class="product-card">
       <img src="../Images/catalog/1.png" alt="Product 1">
-      <h1>View Products</h1>
+      <a href="/CatalogPage/catalog.php"> View Products </a>
 
     </div>
 
     <!-- Product 2 -->
     <div class="product-card">
       <img src="../Images/catalog/12.png" alt="Product 2">
-            <h1>View Products</h1>
+      <a href="/CatalogPage/catalog.php"> View Products </a>
+      
 
     </div>
 
     <!-- Product 3 -->
     <div class="product-card">
       <img src="../Images/catalog/16.png" alt="Product 3">
+      <a href="/CatalogPage/catalog.php"> View Products </a>
+
     </div>
 
     <div></div>
   </section>
-
-  
-
 
 
 <!-- Testimonials Section -->

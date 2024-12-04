@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $_SESSION['cart'][] = $product_id;
 
-        // Redirect back to the catalog or display success message
-        header('Location: catalog.php'); // Replace with your catalog page URL
+        // Redirect back to the catalog 
+        header('Location: catalog.php'); 
         exit;
     } else {
         echo "Error: Product ID is missing!";

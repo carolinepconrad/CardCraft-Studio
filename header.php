@@ -28,7 +28,7 @@
 }
 
 .navbar-brand-title {
-    color: #1d1306;
+    color: #fff7f0;
     font-weight: bold;
     font-size: 1.5rem;
     font-family: 'Bigshot One', cursive;

@@ -14,8 +14,6 @@
   <p>&copy; 2024 CardCraft Studio. All rights reserved.</p>
 </footer>
 
-
-
 </body>
 </html>
 
