@@ -26,7 +26,7 @@
 
 <!-- Gallery Section -->
 <section class="gallery">
-  <h2>Newest Editions</h2>
+  <h1>Newest Editions</h1>
   <div class="gallery-grid">
     <!-- Product 1 -->
     <div class="product-card">

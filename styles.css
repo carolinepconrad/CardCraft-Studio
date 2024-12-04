@@ -111,16 +111,16 @@ body {
 
 /* About Us Section Styling */
 #aboutUs {
-    background-color: #f2e1d8;
+    color: #ffffff;
+    background-color: #b1988f;
     padding: 40px 10%;
-    color: #333;
     text-align: center;
     font-family: 'Space Grotesk', sans-serif;
 
 }
 
 #aboutUs h2 {
-    color:#8C031C;
+    color:#f2e1d8;
     font-size: 2.5em;
     margin-bottom: 20px;
     font-family: 'Space Grotesk', sans-serif;
@@ -144,10 +144,9 @@ body {
     background-color: #b1988f;
   }
   
-  .gallery h2 {
-    font-size: 2em;
+  .gallery h1 {
     margin-bottom: 30px;
-    color: #efefef;
+    color: #f2e1d8;
     font-family: 'Space Grotesk', sans-serif;
 
   }
@@ -178,6 +177,8 @@ body {
   .product-card:hover h1 {
     opacity: 1;
     margin-top: -175px;
+    color: #b1988f;
+
 
   }
   
@@ -230,7 +231,8 @@ body {
 
 .testimonial {
     font-style: italic;
-    background: #f2e1d8;
+   background-color: #b1988f;
+    ;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -240,13 +242,7 @@ body {
 
 .testimonial p {
     margin: 0;
-    color: #8c4c3a;
-}
-
-.testimonial p:last-child {
-    text-align: right;
-    color: #333;
-    font-weight: bold;
+    color: #ffffff;
 }
 
 /* Contact Us Section Styling */
@@ -257,12 +253,17 @@ body {
 }
 
 .contact h2 {
-    color:#8C031C;
+    color:#b1988f;
     font-size: 2.5em;
     margin-bottom: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+
 }
 
 .contact p {
+    color:#b1988f;
     font-size: 1.1em;
-    line-height: 1.5;
+    line-height: 1;
+    text-align: left;
+    margin-left: 375px;
 }

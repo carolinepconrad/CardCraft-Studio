@@ -9,7 +9,7 @@
 
 <body>
 
-<footer>
+<footer style="font-family: 'Space Grotesk', sans-serif; text-align:center;">
   <a class="nav-link active" aria-current="page" href="../Employee/Employee_Login/employee_login.php">Employee Login</a>
   <p>&copy; 2024 CardCraft Studio. All rights reserved.</p>
 </footer>
