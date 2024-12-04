@@ -85,9 +85,6 @@
     opacity: 1;
   }
   
-  
-  
-
 
 
 </style>
@@ -141,9 +138,8 @@ if (!empty($output)) {
         $color = htmlspecialchars($row['color']);
         $productName = htmlspecialchars($row['product_name']);
         
-        // Begin form for adding the product to cart
         echo "<form action='add_to_cart.php' method='POST'>";
-        echo "<input type='hidden' name='product_name' value='$productName'>";
+        echo "<input type='hidden' name='product_id' value='$productName'>";
         echo "<input type='hidden' name='image_path' value='$imagePath'>";
         echo "<input type='hidden' name='style' value='$style'>";
         echo "<input type='hidden' name='color' value='$color'>";
@@ -163,6 +159,3 @@ if (!empty($output)) {
     echo "<h2>No products found for the selected filters.</h2>";
 }
 ?>
-
-
-
