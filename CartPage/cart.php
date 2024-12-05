@@ -53,7 +53,7 @@ $cart = $_SESSION['cart'] ?? [];
 
 }
 
- 
+
 
 </style>
 
@@ -130,9 +130,11 @@ Your Shopping Cart...
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <button>
-        <p><a href="checkout.php"> Checkout</a></p>
-        </button>
+  
+        <p style="font-family: 'Space Grotesk', sans-serif; text-align:center; margin-top:20px; margin-bottom:30px;">
+            <a href="checkout.php"> Checkout</a>
+        </p>
+   
     <?php endif; ?>
 
     <?php include '../footer.php'; ?>
