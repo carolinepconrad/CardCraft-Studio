@@ -20,21 +20,21 @@ $inputUsername = $_POST['username'];
 $inputPassword = $_POST['password'];
 // Hash the input password using SHA-256
 
-$sql = "SELECT * FROM users WHERE username = '$inputUsername' ";
+$sql = "SELECT * FROM employees WHERE username = '$inputUsername' ";
 $result = mysqli_query($conn, $sql);
 
 // Check if a matching user was found
 if (mysqli_num_rows($result) > 0) {
     echo "Choose another username! ";
 // Button to go home
-echo '<form action="../Login/login_page.php">';
+echo '<form action="../Employee/Employee_Login/employee_login.php">';
 echo '<input class="button" type="submit" value="Home">';
 echo '</form>';
 } else {
-    $sql = "INSERT INTO users (username, password_hash, first_name, last_name) VALUES ('$inputUsername',  SHA2('$inputPassword', 256), '$firstName', '$lastName');";
+    $sql = "INSERT INTO employees (username, password_hash, first_name, last_name) VALUES ('$inputUsername',  SHA2('$inputPassword', 256), '$firstName', '$lastName');";
     $result = mysqli_query($conn, $sql);
-setcookie('logged_in', $inputUsername, time() + 86400, "/");
-header('Location: ../index.php');
+setcookie('employee_logged_in', $inputUsername, time() + 86400, "/");
+header('Location: ../employee_dashboard.php');
 
 }
 

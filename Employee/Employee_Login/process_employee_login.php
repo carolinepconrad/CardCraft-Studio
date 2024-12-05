@@ -26,14 +26,14 @@ $result = mysqli_query($conn, $sql);
 
 // Check if a matching user was found
 if (mysqli_num_rows($result) > 0) {
-    setcookie('logged_in', $inputUsername, time() + 86400, "/");
-    header('Location: ../index.php');
+    setcookie('employee_logged_in', $inputUsername, time() + 86400, "/");
+    header('Location: ../employee_dashboard.php');
 
 } else {
     echo "Invalid username or password.";
 // Button to go home
 
-echo '<form action="../Login/login_page.php">';
+echo '<form action="../Employee/Employee_Login/employee_login.php';
 echo '<input class="button" type="submit" value="Home">';
 echo '</form>';
 

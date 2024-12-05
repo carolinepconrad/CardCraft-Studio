@@ -164,3 +164,80 @@ footer p {
     font-size: 1.5rem;
     font-family: 'Bigshot One';
 }
+/* Main Section Styling */
+.Main {
+    background-color: #fff7f0;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.Main h2 {
+    color: #000000;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+.Main {
+   background-color: #fff7f0;
+    ;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    max-width: 600px;
+}
+
+.Main p {
+    margin: 0;
+    color: #000000;
+}
+
+/* Employee Dashboard */
+
+    @import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap');
+ 
+    .tablestyle {
+    width: 50%;
+    border-collapse: collapse;
+    font-size: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: left;
+    margin-left: 25%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .tablestyle thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+
+}
+
+    .tablestyle th, .tablestyle td {
+    padding: 10px ;
+}
+
+    .tablestyle th {
+    background-color: #b1988f;}
+
+    .tablestyle tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+    .tablestyle button {
+    color: #1d1306;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    .tablestyle button:hover {
+    background-color: #dddddd;
+
+}
