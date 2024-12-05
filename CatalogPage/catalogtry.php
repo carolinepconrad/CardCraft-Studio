@@ -52,6 +52,7 @@ $conn->close();
             background: #fff;
             padding: 16px;
             width: 200px;
+            height: 200px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -64,20 +65,27 @@ $conn->close();
             font-size: 18px;
             font-weight: bold;
             margin: 8px 0;
+            opacity: 0;
+
         }
         .card .details {
             color: #555;
             font-size: 14px;
+            opacity: 0;
         }
     </style>
 </head>
 <body>
+
     <?php foreach ($products as $product): ?>
         <div class="card">
             <img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
             <div class="product-name"><?php echo htmlspecialchars($product['product_name']); ?></div>
             <div class="details">Color: <?php echo htmlspecialchars($product['color']); ?></div>
             <div class="details">Style: <?php echo htmlspecialchars($product['style']); ?></div>
+            <div class="addcart"> <button>add to cart</button></div>
+
+
         </div>
     <?php endforeach; ?>
 </body>
