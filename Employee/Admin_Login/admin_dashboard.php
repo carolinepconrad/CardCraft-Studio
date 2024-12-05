@@ -46,7 +46,13 @@ while ($row = mysqli_fetch_array($result)) {
       <input class="button" type="submit" value="Remove from Catalog" name="remove">
     </form>
   </div>
+  <div>
+        <form action="manage_users.php">
+            <input class="button" type="submit" value="Manage Users" name="manage_users">
+        </form>
+    </div>
 </section>
+
 
 
 
