@@ -19,6 +19,19 @@ while ($row = mysqli_fetch_array($result)) {
     $last_name = $row["last_name"];
 }
 ?>
+
+<?php
+require '../Login/db_login_connect.php';
+$username = $_COOKIE['employee_logged_in'];
+$sql = "SELECT * FROM employees WHERE username = '$username'";
+$result = mysqli_query($conn, $sql);
+while ($row = mysqli_fetch_array($result)) {
+    $first_name = $row["first_name"];
+    $last_name = $row["last_name"];
+}
+?>
+
+
 <?php include '../header.php'; ?>
 
 <!-- Main Section -->
@@ -45,7 +58,7 @@ Edit Avaliable Products
 </h1>
     <?php if (empty($cart)): ?>
         <p style="font-family: 'Space Grotesk', sans-serif; text-align:center; margin-top:10px;">
-            Your cart is empty. <a href="/CatalogPage/catalog.php">Continue shopping</a>.
+            No avaliable products.
         </p>
     <?php else: ?>
         <table class="tablestyle">
