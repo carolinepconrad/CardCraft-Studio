@@ -18,11 +18,10 @@
     position: sticky;
     top: 0;
     width: 250px;
-    height: 1000px;
     color: #ffffff;
     padding: 20px 0px;
-    margin-top: 30px;
-    background-color: red;
+    margin-top: 10px;
+    margin-left:15px;
 
   }
 
