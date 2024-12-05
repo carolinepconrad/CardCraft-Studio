@@ -12,7 +12,7 @@
 <!--header-->
 <?php include '../header.php'; ?>
 
-<h1 style="font-family: 'Space Grotesk', sans-serif; text-align:center; margin-top:10px;">
+<h1 style="font-family: 'Space Grotesk', sans-serif; text-align:center; margin-top:100px; min-height: 65vh;">
 You have successfully checked out!
 </h1>
 
