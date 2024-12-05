@@ -27,13 +27,13 @@ $result = mysqli_query($conn, $sql);
 // Check if a matching user was found
 if (mysqli_num_rows($result) > 0) {
     setcookie('admin_logged_in', $inputUsername, time() + 86400, "/");
-    header('Location: ..Employee/Admin_Login/admin_dashboard.php');
+    header('Location: ../Admin_Login/admin_dashboard.php');
 
 } else {
     echo "Invalid username or password.";
 // Button to go home
 
-echo '<form action="../Employee/Admin_Login/admin_login.php';
+echo '<form action="../Employee_Login/employee_login.php';
 echo '<input class="button" type="submit" value="Home">';
 echo '</form>';
 

@@ -32,7 +32,7 @@
       <body>
         <h2>Admin Login</h2>
         <div class="form__group field">
-          <form action="process_admin_login.php" method="post" >
+          <form action="../Admin_Login/process_admin_login.php" method="post" >
             <label class="form__label" for="username" >Admin Number:</label>            
             <input class="form__field" type="text" name="username" id="username" required><br><br>
             <label class="form__label" for="username" >Password:</label>
@@ -69,7 +69,7 @@
             <br>
             <h2>Create Admin Login</h2>
             <div class="form__group field">
-            <form action="create_admin_login.php" method="post">
+            <form action="../Admin_Login/create_admin_login.php" method="post">
               <label class="form__label" for="first_name">First Name:</label>
               <input class="form__field" type="text" name="first_name" id="first_name" required><br><br>
               <label class="form__label" for="last_name">Last Name:</label>
