@@ -38,7 +38,7 @@ select {
 
 button {
     padding: 10px 20px;
-    background-color: #bf9f78;
+    background-color: #b1988f;
     border: none;
     color: white;
     border-radius: 5px;
@@ -47,7 +47,7 @@ button {
 
 /* Footer Styling */
 footer {
-    background-color: #bf9f78;
+    background-color: #b1988f;
     padding: 10px;
     text-align: center;
     position: fixed;
