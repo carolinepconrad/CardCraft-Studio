@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 // Database configuration
 $servername = "54.165.204.136";
 $serverusername = "group3";
@@ -6,7 +9,7 @@ $serverpassword = "qux219jmV754[";
 $dbname = "group3";
 
 // Create a connection
-$conn = mysqli_connect($servername, $serverusername, $serverpassword, $dbname);
+$conn = mysqli_connect($servername, $serverusername, $serverpassword, $dbname,);
 
 // Check connection
 if (!$conn) {
@@ -14,7 +17,7 @@ if (!$conn) {
 }
 
 // Fetch products from the database
-$sql = "SELECT product_name, image_path, color, style FROM product_catalog";
+$sql = "SELECT id, product_name, image_path, color, style FROM product_catalog";
 $result = $conn->query($sql);
 
 $products = [];
@@ -25,6 +28,42 @@ if ($result->num_rows > 0) {
 } else {
     echo "No products found.";
 }
+if (isset($_POST['add_to_cart'])) {
+    $product_id = $_POST['product_id'];
+
+    // Fetch the product details from the database
+    $sql = "SELECT id, product_name, image_path, color, style FROM product_catalog WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $product_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $product = $result->fetch_assoc();
+
+    if ($product) {
+        // Initialize cart if not set
+        if (!isset($_SESSION['cart'])) {
+            $_SESSION['cart'] = [];
+        }
+
+        // Check if product already exists in cart
+        $product_exists = false;
+        foreach ($_SESSION['cart'] as &$item) {
+            if ($item['id'] == $product_id) {
+                $item['quantity'] += 1; // Increment quantity
+                $product_exists = true;
+                break;
+            }
+        }
+
+        // If product doesn't exist, add it to the cart
+        if (!$product_exists) {
+            $product['quantity'] = 1; // Add a quantity field
+            $_SESSION['cart'][] = $product;
+        }
+    }
+}
+
+
 
 $conn->close();
 ?>
@@ -131,13 +170,31 @@ $conn->close();
         <?php include 'sidebar.php'; ?>
     
     <main>
-        <?php foreach ($products as $product): ?>
-            <div class="card">
-                <img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
-                <div class="product-name"><?php echo htmlspecialchars($product['product_name']); ?></div>
-                <div class="addcart"> <button>add to cart</button></div>
+    <?php foreach ($products as $product): ?>
+        <div class="card">
+            <img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
+            <div class="product-name"><?php echo htmlspecialchars($product['product_name']); ?></div>
+            <div class="details">
+                <span>Color: <?php echo htmlspecialchars($product['color']); ?></span><br>
+                <span>Style: <?php echo htmlspecialchars($product['style']); ?></span>
             </div>
-        <?php endforeach; ?>
+
+            <!-- Add to Cart Form -->
+            <form method="POST">
+                <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>"> <!-- Correct product_id -->
+                <button type="submit" name="add_to_cart" class="addcart">Add to Cart</button>
+            </form>
+        </div>
+    <?php endforeach; ?>
+    
+    <!-- Add to Cart Form -->
+    <!-- <form method="POST">
+    <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+    <button type="submit" name="add_to_cart" class="addcart">Add to Cart</button>
+</form> -->
+</div>
+
+       
     </main>
 </body>
 </html>
