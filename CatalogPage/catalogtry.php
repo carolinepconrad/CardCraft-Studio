@@ -9,7 +9,7 @@ $serverpassword = "qux219jmV754[";
 $dbname = "group3";
 
 // Create a connection
-$conn = mysqli_connect($servername, $serverusername, $serverpassword, $dbname,);
+$conn = mysqli_connect($servername, $serverusername, $serverpassword, $dbname);
 
 // Check connection
 if (!$conn) {
@@ -63,9 +63,6 @@ if (isset($_POST['add_to_cart'])) {
     }
 }
 
-
-
-
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -87,8 +84,8 @@ $conn->close();
             line-height: 1.6;
             background-color: #ffffff;
             height: 100vh;
-
-          
+            margin: 0;
+            padding: 0;
         }
         header {
             background-color: #007bff;
@@ -96,30 +93,25 @@ $conn->close();
             padding: 1rem;
             text-align: center;
         }
-      
-        main {
-            grid-area: main;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 2rem;
-            margin-left: 250px;
-            margin-top: -120px;
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 15px;
+            padding: 20px;
+            margin-top: -150px;
+            justify-items: center;
+            margin-left: 350px;
         }
         .card {
             position: relative;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #fff;
-            padding: 10px;
-            margin-bottom:15px;
-            margin-right:-13px;
-            width: 300px;
-            height: 300px;
-            text-align: center;
-            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
             transform: scale(1.05);
@@ -146,56 +138,35 @@ $conn->close();
             color: #555;
             font-size: 14px;
         }
-        .addcart button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 20px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .addcart button:hover {
-            background-color: #0056b3;
-        }
-        .addcart button:active {
-            background-color: #003f7f;
-        }
+        
+        
     </style>
 </head>
 <body>
     <div class="header">
-    <?php include '../header.php'; ?>
+        <?php include '../header.php'; ?>
     </div>
-        <?php include 'sidebar.php'; ?>
+    <?php include 'sidebar.php'; ?>
     
     <main>
-    <?php foreach ($products as $product): ?>
-        <div class="card">
-            <img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
-            <div class="product-name"><?php echo htmlspecialchars($product['product_name']); ?></div>
-            <div class="details">
-                <span>Color: <?php echo htmlspecialchars($product['color']); ?></span><br>
-                <span>Style: <?php echo htmlspecialchars($product['style']); ?></span>
-            </div>
+        <div class="product-container">
+            <?php foreach ($products as $product): ?>
+                <div class="card">
+                    <img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
+                    <div class="product-name"><?php echo htmlspecialchars($product['product_name']); ?></div>
+                    <!-- <div class="details">
+                        <span>Color: <?php echo htmlspecialchars($product['color']); ?></span><br>
+                        <span>Style: <?php echo htmlspecialchars($product['style']); ?></span>
+                    </div> -->
 
-            <!-- Add to Cart Form -->
-            <form method="POST">
-                <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>"> <!-- Correct product_id -->
-                <button type="submit" name="add_to_cart" class="addcart">Add to Cart</button>
-            </form>
+                    <!-- Add to Cart Form -->
+                    <form method="POST">
+                        <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                        <button type="submit" name="add_to_cart" class="addcart">Add to Cart</button>
+                    </form>
+                </div>
+            <?php endforeach; ?>
         </div>
-    <?php endforeach; ?>
-    
-    <!-- Add to Cart Form -->
-    <!-- <form method="POST">
-    <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
-    <button type="submit" name="add_to_cart" class="addcart">Add to Cart</button>
-</form> -->
-</div>
-
-       
     </main>
 </body>
 </html>
