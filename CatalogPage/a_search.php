@@ -1,161 +1,201 @@
+<?php
+session_start();
+// Include the filter form
+include ('../header.php');
+?>
+
+<!-- Display products -->
+<main>
+    <div class="product-container">
+    <?php
+    // Database connection and product fetching (same as before)
+    $servername = "54.165.204.136";
+    $serverusername = "group3";
+    $serverpassword = "qux219jmV754[";
+    $dbname = "group3";
+    $conn = mysqli_connect($servername, $serverusername, $serverpassword, $dbname);
+
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Get the selected filters (if any)
+    $style = isset($_GET['style']) ? $_GET['style'] : '';
+    $color = isset($_GET['color']) ? $_GET['color'] : '';
+
+    // Filter query
+    $sql = "SELECT id, product_name, image_path, color, style FROM product_catalog WHERE 1";
+
+    if (!empty($style)) {
+        $sql .= " AND style LIKE ?";
+    }
+    if (!empty($color)) {
+        $sql .= " AND color LIKE ?";
+    }
+
+    $stmt = $conn->prepare($sql);
+
+    $params = [];
+    if (!empty($style)) $params[] = "%$style%";
+    if (!empty($color)) $params[] = "%$color%";
+
+    if (count($params) > 0) {
+        $stmt->bind_param(str_repeat('s', count($params)), ...$params);
+    }
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $products = [];
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+
+    // Handle the Add to Cart functionality
+    if (isset($_POST['add_to_cart'])) {
+        $product_id = $_POST['product_id'];
+
+        // Fetch product details from the database
+        $sql = "SELECT id, product_name, image_path, color, style FROM product_catalog WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $product_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $product = $result->fetch_assoc();
+
+        if ($product) {
+            // Initialize cart if not set
+            if (!isset($_SESSION['cart'])) {
+                $_SESSION['cart'] = [];
+            }
+
+            // Check if product already exists in cart
+            $product_exists = false;
+            foreach ($_SESSION['cart'] as &$item) {
+                if ($item['id'] == $product_id) {
+                    $item['quantity'] += 1; // Increment quantity if product already in cart
+                    $product_exists = true;
+                    break;
+                }
+            }
+
+            // If product doesn't exist, add it to the cart with quantity 1
+            if (!$product_exists) {
+                $product['quantity'] = 1; // Set initial quantity to 1
+                $_SESSION['cart'][] = $product;
+            }
+        }
+    }
+
+    // Display the products
+    foreach ($products as $product) {
+        echo "<div class='card'>";
+        echo "<img src='" . htmlspecialchars($product['image_path']) . "' alt='" . htmlspecialchars($product['product_name']) . "' class='product-image'>";
+        echo "<div class='product-name'>" . htmlspecialchars($product['product_name']) . "</div>";
+        echo "<div class='details'>Color: " . htmlspecialchars($product['color']) . "<br>Style: " . htmlspecialchars($product['style']) . "</div>";
+        echo "<form method='POST'>";
+        echo "<input type='hidden' name='product_id' value='" . $product['id'] . "'>";
+        echo "<button type='submit' name='add_to_cart' class='addcart'>Add to Cart</button>";
+        echo "</form>";
+        echo "</div>";
+    }
+
+    $conn->close();
+    ?>
+    </div>
+</main>
+
 <style>
-.catalog {
+/* General layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 2rem;
-    margin-left: 250px;
-    margin-top: -800px;
-  }
-  .product-card {
-    position: relative; /* Needed for the button to be absolutely positioned within the card */
-    width: 30%;
-    margin: 0.5rem;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensures the button doesn’t overflow the card's boundaries */
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .product-card img {
-    display: block;
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  .product-card button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    padding: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .product-card:hover button {
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 0.751);
-  }
-  
-  .product-card button img {
-    width: 40px;
-    height: auto;
-  }
-  
-  .product-card {
-    position: relative;
-    display: inline-block;
-    margin: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card styling */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-  }
-  
-  .product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .product-card img {
-    display: block;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Image */
+.product-image {
     width: 100%;
-    border-radius: 10px;
-  }
-  
-  .product-card button {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: transparent;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Product name */
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Product details */
+.details {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Add to Cart Button */
+.addcart {
+    background-color: #007bff;
+    color: white;
     border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
     cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .product-card:hover button {
-    opacity: 1;
-  }
-  
+    transition: background-color 0.3s ease;
+}
 
+.addcart:hover {
+    background-color: #0056b3;
+}
 
+.addcart:active {
+    background-color: #003f7f;
+}
+
+.addcart:focus {
+    outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-container {
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
 </style>
-<?php
-
-
-
-// Open the CSV file
-$csvfile = fopen("product_catalog.csv", "r");
-if ($csvfile === false) {
-    echo "<h2>Error opening the product catalog file!</h2>";
-    exit;
-}
-
-// Read the header row and initialize an empty array for the data
-$header = fgetcsv($csvfile); // Save header for later use
-$data = []; // Array to store rows as associative arrays
-
-// Loop through each line of the file
-while (($line = fgetcsv($csvfile)) !== false) {
-    if (count($line) === count($header)) {
-        $data[] = array_combine($header, $line); // Combine header with row values
-    }
-}
-
-// Close the CSV file after reading
-fclose($csvfile);
-
-// Get the selected filter options from the dropdown
-$style = isset($_GET['style']) ? htmlspecialchars($_GET['style']) : '';
-$color = isset($_GET['color']) ? htmlspecialchars($_GET['color']) : '';
-
-// Filter the data based on the selected criteria
-$output = array_filter($data, function ($row) use ($style, $color) {
-    $styleMatch = empty($style) || stripos($row['style'], $style) !== false;
-    $colorMatch = empty($color) || stripos($row['color'], $color) !== false;
-    return $styleMatch && $colorMatch;
-});
-
-// Display the filtered products dynamically as cards
-if (!empty($output)) {
-    include '../header.php';
-    include 'sidebar.php';
-
-    echo "<section class='catalog'>";
-    foreach ($output as $row) {
-        echo "<div class='product-card'>";
-        // Ensure 'image_path' column exists and has a value
-        $imagePath = htmlspecialchars($row['image_path'] ?? '/images/catalog/product1.png');
-        $style = htmlspecialchars($row['style']);
-        $color = htmlspecialchars($row['color']);
-        $productName = htmlspecialchars($row['product_name']);
-        
-        echo "<form action='add_to_cart.php' method='POST'>";
-        echo "<input type='hidden' name='product_id' value='$productName'>";
-        echo "<input type='hidden' name='image_path' value='$imagePath'>";
-        echo "<input type='hidden' name='style' value='$style'>";
-        echo "<input type='hidden' name='color' value='$color'>";
-        
-        echo "<img src='$imagePath' alt='$productName' class='product-image' />";
-        echo "<div class='product-details'>";
-        echo "<button type='submit' class='add-to-cart-btn'>
-                <img src='/images/catalog/add-to-cart.png' alt='Add to cart' />
-              </button>";
-        echo "</div>";
-        echo "</form>"; // Close form
-        echo "</div>";
-    }
-    echo "</section>";
-} else {
-    // No matching products found
-    echo "<h2>No products found for the selected filters.</h2>";
-}
-?>

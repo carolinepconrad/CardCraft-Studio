@@ -49,19 +49,20 @@ if (isset($_POST['add_to_cart'])) {
         $product_exists = false;
         foreach ($_SESSION['cart'] as &$item) {
             if ($item['id'] == $product_id) {
-                $item['quantity'] += 1; // Increment quantity
+                $item['quantity'] += 1; // Increment quantity if product already in cart
                 $product_exists = true;
                 break;
             }
         }
 
-        // If product doesn't exist, add it to the cart
+        // If product doesn't exist, add it to the cart with quantity 1
         if (!$product_exists) {
-            $product['quantity'] = 1; // Add a quantity field
+            $product['quantity'] = 1; // Set initial quantity to 1
             $_SESSION['cart'][] = $product;
         }
     }
 }
+
 
 
 

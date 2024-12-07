@@ -83,22 +83,7 @@ body {
 
 }
 
-.btn-primary {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #bf5349;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    text-decoration: none;
-    font-family: 'Space Grotesk', sans-serif;
-    transition: background-color 0.3s ease;
-}
 
-.btn-primary:hover {
-    background-color: #8c4c3a;
-}
 
 #logoContainer {
     padding: 10px;
@@ -109,7 +94,6 @@ body {
     max-width: 300px;
 }
 
-/* About Us Section Styling */
 #aboutUs {
     color: #ffffff;
     background-color: #b1988f;
@@ -137,7 +121,6 @@ body {
     
 }
 
-/*Gallery*/
 .gallery {
     padding: 40px 20px;
     text-align: center;
@@ -200,7 +183,6 @@ body {
   }
   
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .gallery-grid {
       grid-template-columns: repeat(2, 1fr);
