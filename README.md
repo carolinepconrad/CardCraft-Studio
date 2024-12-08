@@ -15,13 +15,12 @@ The data that will need to be stored is a card catalog with all the unique card 
 ### Pages in the website
 
 1. Home Page/About Us
-2. Checkout Page
-3. Login 
-4. Search Page
-5. Catalog Page
-6. Cart Page
-7. Order Confirmation Page
-8. User Preferences
+2. Search/Catalog Page
+3. Cart Page
+4. Checkout Confirmation Page
+5. Login/New User Page
+6. Employee Login/New Employee Page
+7. User Preferences
 
 ### Pages
 [Example Pages Markdown](https://github.com/Natelofgren/CardCraft-Studio/blob/main/page_designs.md)
