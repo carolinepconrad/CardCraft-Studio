@@ -1,207 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Catalog</title>
-  <link rel="stylesheet" href="catstyle.css">
+<?php
+session_start();
+// Include the filter form
+include ('../Employee/employee_header.php');
+include('../CatalogPage/sidebar.php');
+?>
 
-</head>
+<!-- Display products -->
+<main>
+    <div class="product-container">
+    <?php
+    // Database connection and product fetching (same as before)
+    $servername = "54.165.204.136";
+    $serverusername = "group3";
+    $serverpassword = "qux219jmV754[";
+    $dbname = "group3";
+    $conn = mysqli_connect($servername, $serverusername, $serverpassword, $dbname);
 
-<body>
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
-<?php include '../Employee/employe_header.php'; ?>
-<?php include 'sidebar.php'; ?>
+    // Get the selected filters (if any)
+    $style = isset($_GET['style']) ? $_GET['style'] : '';
+    $color = isset($_GET['color']) ? $_GET['color'] : '';
 
+    // Filter query
+    $sql = "SELECT id, product_name, image_path, color, style FROM product_catalog WHERE 1";
 
-  <section class="catalog">
-     <!-- Product 1 -->
-  <div class="product-card">
-    <img src="../images/catalog/1.png" alt="Product 1">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="1">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
+    if (!empty($style)) {
+        $sql .= " AND style LIKE ?";
+    }
+    if (!empty($color)) {
+        $sql .= " AND color LIKE ?";
+    }
 
-  <!-- Product 2 -->
-  <div class="product-card">
-    <img src="../images/catalog/2.png" alt="Product 2">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="2">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
+    $stmt = $conn->prepare($sql);
 
-  <!-- Product 3 -->
-  <div class="product-card">
-    <img src="/images/catalog/3.png" alt="Product 3">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="3">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
+    $params = [];
+    if (!empty($style)) $params[] = "%$style%";
+    if (!empty($color)) $params[] = "%$color%";
 
-  <!-- Product 5 -->
-  <div class="product-card">
-    <img src="/images/catalog/5.png" alt="Product 5">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="5">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-     <!-- Product 6 -->
-     <div class="product-card">
-    <img src="/images/catalog/6.png" alt="Product 6">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="6">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
+    if (count($params) > 0) {
+        $stmt->bind_param(str_repeat('s', count($params)), ...$params);
+    }
 
-  <!-- Product 7 -->
-  <div class="product-card">
-    <img src="/images/catalog/7.png" alt="Product 7">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="7">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-  <!-- Product 8 -->
-  <div class="product-card">
-    <img src="/images/catalog/8.png" alt="Product 8">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="8">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
+    $products = [];
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+
+    // Handle the Add to Cart functionality
+    if (isset($_POST['add_to_cart'])) {
+        $product_id = $_POST['product_id'];
+
+        // Fetch product details from the database
+        $sql = "SELECT id, product_name, image_path, color, style FROM product_catalog WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $product_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $product = $result->fetch_assoc();
+
+        if ($product) {
+            // Initialize cart if not set
+            if (!isset($_SESSION['cart'])) {
+                $_SESSION['cart'] = [];
+            }
+
+            // Check if product already exists in cart
+            $product_exists = false;
+            foreach ($_SESSION['cart'] as &$item) {
+                if ($item['id'] == $product_id) {
+                    $item['quantity'] += 1; // Increment quantity if product already in cart
+                    $product_exists = true;
+                    break;
+                }
+            }
+
+            // If product doesn't exist, add it to the cart with quantity 1
+            if (!$product_exists) {
+                $product['quantity'] = 1; // Set initial quantity to 1
+                $_SESSION['cart'][] = $product;
+            }
+        }
+    }
+
+    // Display the products
+    foreach ($products as $product) {
+        echo "<div class='card'>";
+        echo "<img src='" . htmlspecialchars($product['image_path']) . "' alt='" . htmlspecialchars($product['product_name']) . "' class='product-image'>";
+        echo "<div class='product-name'>" . htmlspecialchars($product['product_name']) . "</div>";
+        echo "<div class='details'>Color: " . htmlspecialchars($product['color']) . "<br>Style: " . htmlspecialchars($product['style']) . "</div>";
+        echo "<form method='POST'>";
+        echo "<input type='hidden' name='product_id' value='" . $product['id'] . "'>";
+        echo "</form>";
+        echo "</div>";
+    }
+
+    $conn->close();
+    ?>
+    </div>
+</main>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap');
   
-  <!-- Product 9 -->
-  <div class="product-card">
-    <img src="/images/catalog/9.png" alt="Product 9">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="9">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-   <!-- Product 10 -->
-   <div class="product-card">
-    <img src="/images/catalog/10.png" alt="Product 10">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="10">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-
-  <!-- Product 11 -->
-  <div class="product-card">
-    <img src="/images/catalog/11.png" alt="Product 11">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="11">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-
-  <!-- Product 12 -->
-  <div class="product-card">
-    <img src="/images/catalog/12.png" alt="Product 12">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="12">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-  
-  <!-- Product 13 -->
-  <div class="product-card">
-    <img src="/images/catalog/13.png" alt="Product 13">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="13">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-     <!-- Product 14 -->
-     <div class="product-card">
-    <img src="/images/catalog/14.png" alt="Product 14">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="14">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-
-  <!-- Product 15 -->
-  <div class="product-card">
-    <img src="/images/catalog/15.png" alt="Product 15">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="15">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-
-  <!-- Product 16 -->
-  <div class="product-card">
-    <img src="/images/catalog/16.png" alt="Product 16">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="16">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-  
-  <!-- Product 17 -->
-  <div class="product-card">
-    <img src="/images/catalog/17.png" alt="Product 17">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="17">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-     <!-- Product 18 -->
-     <div class="product-card">
-    <img src="/images/catalog/18.png" alt="Product 18">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="18">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-
-  <!-- Product 19 -->
-  <div class="product-card">
-    <img src="/images/catalog/19.png" alt="Product 19">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="19">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-
-  <!-- Product 22 -->
-  <div class="product-card">
-    <img src="/images/catalog/22.png" alt="Product 22">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="22">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-  
-  <!-- Product 23 -->
-  <div class="product-card">
-    <img src="/images/catalog/23.png" alt="Product 23">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="23">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-   <!-- Product 24 -->
-   <div class="product-card">
-    <img src="/images/catalog/24.png" alt="Product 24">
-    <form action="add_to_cart.php" method="POST">
-      <input type="hidden" name="product_id" value="24">
-      <button type="submit"><img src="/images/catalog/add-to-cart.png" alt="Add to Cart"></button>
-    </form>
-  </div>
-
-  </section>
-  <?php include '../footer.php'; ?>
-
-</body>
-
-</html>
+  body {
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.6;
+      background-color: #ffffff;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+  }
+  header {
+      background-color: #007bff;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+  }
+  .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+      gap: 15px;
+      padding: 20px;
+      margin-top: -150px;
+      margin-left: 350px;  }
+  .card {
+      position: relative;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+  }
+  .card .product-name, .card .details, .addcart button {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+  }
+  .card:hover .product-name, .card:hover .details, .card:hover .addcart button {
+      opacity: 1;
+  }
+  .card .product-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 8px 0;
+  }
+  .card .details {
+      color: #555;
+      font-size: 14px;
+  }
+  .addcart button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  .addcart button:hover {
+      background-color: #0056b3;
+  }
+  .addcart button:active {
+      background-color: #003f7f;
+  }
+</style>

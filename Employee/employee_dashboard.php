@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_array($result)) {
     <form action="../Employee/modify_catalog.php">
       <input class="button" type="submit" value="Modify Catalog" name="modify">
     </form>
-    <form action="../CatalogPage/catalog.php">
+    <form action="../Employee/search_catalog.php">
       <input class="button" type="submit" value="Search Catalog" name="search">
     </form>
     <form action="../Employee/remove_catalog.php">
