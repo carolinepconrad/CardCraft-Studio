@@ -1,28 +1,6 @@
 <?php
 session_start();
 
-
-
-// Handle the "Remove one quantity from cart" action
-if (isset($_POST['remove_from_cart'])) {
-    $remove_key = $_POST['remove_key'];
-
-    // Check if the key exists in the session cart
-    if (isset($_SESSION['cart'][$remove_key])) {
-        // Decrease the quantity of the product
-        $_SESSION['cart'][$remove_key]['quantity'] -= 1;
-
-        // If the quantity becomes 0 or less, remove the product from the cart
-        if ($_SESSION['cart'][$remove_key]['quantity'] <= 0) {
-            unset($_SESSION['cart'][$remove_key]);
-        }
-    }
-}
-
-// Debugging: Display session cart
-// echo "<pre>";
-// print_r($_SESSION['cart']); // Check what's inside the cart session
-// echo "</pre>";
 ?>
 
 <?php include ('../Employee/employee_header.php'); ?>
