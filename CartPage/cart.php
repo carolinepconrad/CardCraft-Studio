@@ -53,8 +53,8 @@ if (isset($_POST['remove_from_cart'])) {
         }
         table th, table td {
             border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
+            padding: 5px;
+            text-align: center;
             
         }
         table th {
@@ -92,7 +92,7 @@ if (isset($_POST['remove_from_cart'])) {
             <tbody>
                 <?php foreach ($_SESSION['cart'] as $key => $product): ?>
                     <tr>
-                        <td><img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" style="width: 50px; height: auto;"></td>
+                        <td><img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" style="width: 200px; height: auto;"></td>
                         <td><?php echo htmlspecialchars($product['product_name']); ?></td>
                         <td><?php echo htmlspecialchars($product['color']); ?></td>
                         <td><?php echo htmlspecialchars($product['style']); ?></td>
@@ -112,6 +112,7 @@ if (isset($_POST['remove_from_cart'])) {
     <?php endif; ?>
 
     <button><a href="/CatalogPage/catalogtry.php">Back to Products</a></button>
+    <br> <br> <br>
 
 </body>
 </html>
