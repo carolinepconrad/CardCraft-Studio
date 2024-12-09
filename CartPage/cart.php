@@ -48,12 +48,20 @@ if (isset($_POST['remove_from_cart'])) {
         table {
             width: 80%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-            margin-left: 10%;
+            margin-bottom: 50px;
+            margin-left: 15%;
         }
         table th, table td {
             border: 1px solid #ddd;
+<<<<<<< Updated upstream
             padding: 5px;
+=======
+<<<<<<< HEAD
+            padding: 10px;
+=======
+            padding: 5px;
+>>>>>>> 25d33642417a9cb8d1fd531705e5a9f70ad66e7f
+>>>>>>> Stashed changes
             text-align: center;
             
         }
@@ -72,6 +80,22 @@ if (isset($_POST['remove_from_cart'])) {
         }
         .remove-btn:hover {
             background-color: #cc0000;
+        }
+        button{
+            padding: 5px 14px;
+            border-radius: 15px;
+            border: none;
+            background-color: #5C4033;
+            font-family: 'Space Grotesk', sans-serif;
+            color: white;
+            margin-top:-4px;
+        }
+        button:hover{
+            background-color: #1d1306;
+
+        }
+        a{
+            color: white;
         }
     </style>
 </head>
@@ -110,9 +134,18 @@ if (isset($_POST['remove_from_cart'])) {
     <?php else: ?>
         <p style="margin-top: 25px;">Your cart is empty.</p>
     <?php endif; ?>
+    <button style="width:250px;"><a href="/CartPage/checkout.php">Confirm Order</a></button><br></br>
+    <button style="width:250px;"><a href="/CatalogPage/catalogtry.php">Back to Products</a></button>
+    <br></br><br></br>
 
+<<<<<<< HEAD
+=======
     <button><a href="/CatalogPage/catalogtry.php">Back to Products</a></button>
     <br> <br> <br>
+<<<<<<< Updated upstream
+=======
+>>>>>>> 25d33642417a9cb8d1fd531705e5a9f70ad66e7f
+>>>>>>> Stashed changes
 
 </body>
 </html>
