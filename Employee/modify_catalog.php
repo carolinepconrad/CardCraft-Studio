@@ -1,8 +1,3 @@
-<?php
-session_start();
-
-?>
-
 <?php include ('../Employee/employee_header.php'); ?>
 
 <!DOCTYPE html>
@@ -46,30 +41,50 @@ session_start();
             background-color: #cc0000;
         }
     </style>
+
 </head>
+
+
+<?php
+    // Database connection and product fetching (same as before)
+    $servername = "54.165.204.136";
+    $serverusername = "group3";
+    $serverpassword = "qux219jmV754[";
+    $dbname = "group3";
+    $conn = mysqli_connect($servername, $serverusername, $serverpassword, $dbname);
+
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Filter query
+    $sql = "SELECT id, product_name, image_path, color, style FROM product_catalog WHERE 1";
+    $result = mysqli_query($conn, $sql);
+?>
+
 <body>
-    <h1 style="margin-top: 25px">Your Cart</h1>
+    <h1 style="margin-top: 25px; margin-bottom: 50px">Modify Products</h1>
 
    
         <table>
             <thead>
                 <tr>
+                    <th>Product ID</th>
                     <th>Image</th>
                     <th>Product Name</th>
                     <th>Color</th>
                     <th>Style</th>
-                    <th>Quantity</th> <!-- Added Quantity column -->
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($_SESSION['cart'] as $key => $product): ?>
+                <?php while ($product = mysqli_fetch_assoc($result)): ?>
                     <tr>
+                        <td><?php echo htmlspecialchars($product['id']); ?></td>
                         <td><img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" style="width: 50px; height: auto;"></td>
                         <td><?php echo htmlspecialchars($product['product_name']); ?></td>
                         <td><?php echo htmlspecialchars($product['color']); ?></td>
                         <td><?php echo htmlspecialchars($product['style']); ?></td>
-                        <td><?php echo $product['quantity']; ?></td> 
                         <td>
                             <form method="POST">
                                 <input type="hidden" name="remove_key" value="<?php echo $key; ?>">
@@ -77,11 +92,16 @@ session_start();
                             </form>
                         </td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
             </tbody>
         </table>
 
-    <button><a href="/CatalogPage/catalogtry.php">Back to Products</a></button>
+    <?php include '../footer.php'; ?>
 
+    <?php
+        mysqli_close($conn);
+    ?>
+
+</body>
 </body>
 </html>

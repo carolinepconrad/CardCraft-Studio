@@ -2,7 +2,7 @@
 session_start();
 // Include the filter form
 include ('../Employee/employee_header.php');
-include('../CatalogPage/sidebar.php');
+include('../Employee/employee_sidebar.php');
 ?>
 
 <!-- Display products -->
@@ -52,42 +52,7 @@ include('../CatalogPage/sidebar.php');
         $products[] = $row;
     }
 
-    // Handle the Add to Cart functionality
-    if (isset($_POST['add_to_cart'])) {
-        $product_id = $_POST['product_id'];
-
-        // Fetch product details from the database
-        $sql = "SELECT id, product_name, image_path, color, style FROM product_catalog WHERE id = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $product_id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $product = $result->fetch_assoc();
-
-        if ($product) {
-            // Initialize cart if not set
-            if (!isset($_SESSION['cart'])) {
-                $_SESSION['cart'] = [];
-            }
-
-            // Check if product already exists in cart
-            $product_exists = false;
-            foreach ($_SESSION['cart'] as &$item) {
-                if ($item['id'] == $product_id) {
-                    $item['quantity'] += 1; // Increment quantity if product already in cart
-                    $product_exists = true;
-                    break;
-                }
-            }
-
-            // If product doesn't exist, add it to the cart with quantity 1
-            if (!$product_exists) {
-                $product['quantity'] = 1; // Set initial quantity to 1
-                $_SESSION['cart'][] = $product;
-            }
-        }
-    }
-
+    
     // Display the products
     foreach ($products as $product) {
         echo "<div class='card'>";
