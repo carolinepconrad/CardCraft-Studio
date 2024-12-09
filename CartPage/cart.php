@@ -53,15 +53,7 @@ if (isset($_POST['remove_from_cart'])) {
         }
         table th, table td {
             border: 1px solid #ddd;
-<<<<<<< Updated upstream
             padding: 5px;
-=======
-<<<<<<< HEAD
-            padding: 10px;
-=======
-            padding: 5px;
->>>>>>> 25d33642417a9cb8d1fd531705e5a9f70ad66e7f
->>>>>>> Stashed changes
             text-align: center;
             
         }
@@ -138,14 +130,8 @@ if (isset($_POST['remove_from_cart'])) {
     <button style="width:250px;"><a href="/CatalogPage/catalogtry.php">Back to Products</a></button>
     <br></br><br></br>
 
-<<<<<<< HEAD
-=======
-    <button><a href="/CatalogPage/catalogtry.php">Back to Products</a></button>
-    <br> <br> <br>
-<<<<<<< Updated upstream
-=======
->>>>>>> 25d33642417a9cb8d1fd531705e5a9f70ad66e7f
->>>>>>> Stashed changes
+    
+
 
 </body>
 </html>
