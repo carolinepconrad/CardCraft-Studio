@@ -93,7 +93,7 @@ include('sidebar.php');
         echo "<div class='card'>";
         echo "<img src='" . htmlspecialchars($product['image_path']) . "' alt='" . htmlspecialchars($product['product_name']) . "' class='product-image'>";
         echo "<div class='product-name'>" . htmlspecialchars($product['product_name']) . "</div>";
-        echo "<div class='details'>Color: " . htmlspecialchars($product['color']) . "<br>Style: " . htmlspecialchars($product['style']) . "</div>";
+        // echo "<div class='details'>Color: " . htmlspecialchars($product['color']) . "<br>Style: " . htmlspecialchars($product['style']) . "</div>";
         echo "<form method='POST'>";
         echo "<input type='hidden' name='product_id' value='" . $product['id'] . "'>";
         echo "<button type='submit' name='add_to_cart' class='addcart'>Add to Cart</button>";
@@ -150,36 +150,39 @@ include('sidebar.php');
       height: auto;
       border-radius: 4px;
   }
-  .card .product-name, .card .details, .addcart button {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-  }
-  .card:hover .product-name, .card:hover .details, .card:hover .addcart button {
-      opacity: 1;
-  }
-  .card .product-name {
-      font-size: 18px;
-      font-weight: bold;
-      margin: 8px 0;
-  }
-  .card .details {
-      color: #555;
-      font-size: 14px;
-  }
-  .addcart button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 10px 20px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  }
-  .addcart button:hover {
-      background-color: #0056b3;
-  }
-  .addcart button:active {
-      background-color: #003f7f;
-  }
+  .card .product-name, .card .details, .addcart {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .card:hover .product-name, .card:hover .details, .card:hover .addcart {
+            opacity: 1;
+        }
+        .card .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 8px 0;
+            font-family: 'Space Grotesk', sans-serif;
+
+        }
+        .card .details {
+            color: #555;
+            font-size: 14px;
+            font-family: 'Space Grotesk', sans-serif;
+
+        }
+        .addcart {
+            padding: 5px 14px;
+            border-radius: 15px;
+            border: none;
+            background-color: #5C4033;
+            font-family: 'Space Grotesk', sans-serif;
+            color: white;
+            margin-top:-4px;
+
+
+        }
+        .addcart:hover {
+            background-color: #1d1306;
+
+        }
 </style>

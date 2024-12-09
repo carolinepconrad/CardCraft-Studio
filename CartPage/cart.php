@@ -35,27 +35,33 @@ if (isset($_POST['remove_from_cart'])) {
     <title>Cart</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap');
-
+        
         body {
             font-family: 'Space Grotesk', sans-serif;
             line-height: 1.6;
             text-align: center;
+
         }
         a {
             text-decoration: none;
         }
         table {
-            width: 100%;
+            width: 80%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            margin-left: 10%;
         }
         table th, table td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: left;
+            
         }
         table th {
             background-color: #f4f4f4;
+            text-align: center;
+
+
         }
         .remove-btn {
             background-color: #ff4d4d;
@@ -80,8 +86,7 @@ if (isset($_POST['remove_from_cart'])) {
                     <th>Product Name</th>
                     <th>Color</th>
                     <th>Style</th>
-                    <th>Quantity</th> <!-- Added Quantity column -->
-                    <th>Action</th>
+                    <th>Quantity</th> 
                 </tr>
             </thead>
             <tbody>
@@ -92,7 +97,7 @@ if (isset($_POST['remove_from_cart'])) {
                         <td><?php echo htmlspecialchars($product['color']); ?></td>
                         <td><?php echo htmlspecialchars($product['style']); ?></td>
                         <td><?php echo $product['quantity']; ?></td> 
-                        <td>
+                        <td style="border: none;">
                             <form method="POST">
                                 <input type="hidden" name="remove_key" value="<?php echo $key; ?>">
                                 <button type="submit" name="remove_from_cart" class="remove-btn">Remove </button>

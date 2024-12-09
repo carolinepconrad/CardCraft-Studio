@@ -104,14 +104,14 @@ $conn->close();
         }
         .card {
             position: relative;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #fff;
-      padding: 10px;
-      text-align: center;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
             transform: scale(1.05);
@@ -122,21 +122,40 @@ $conn->close();
             height: auto;
             border-radius: 4px;
         }
-        .card .product-name, .card .details, .addcart button {
+        .card .product-name, .card .details, .addcart {
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        .card:hover .product-name, .card:hover .details, .card:hover .addcart button {
+        .card:hover .product-name, .card:hover .details, .card:hover .addcart {
             opacity: 1;
         }
         .card .product-name {
             font-size: 18px;
             font-weight: bold;
             margin: 8px 0;
+            font-family: 'Space Grotesk', sans-serif;
+
         }
         .card .details {
             color: #555;
             font-size: 14px;
+            font-family: 'Space Grotesk', sans-serif;
+
+        }
+        .addcart {
+            padding: 5px 14px;
+            border-radius: 15px;
+            border: none;
+            background-color: #5C4033;
+            font-family: 'Space Grotesk', sans-serif;
+            color: white;
+            margin-top:-4px;
+
+
+        }
+        .addcart:hover {
+            background-color: #1d1306;
+
         }
         
         

@@ -34,10 +34,6 @@ session_start();
         .checkout-table th {
             background-color: #f4f4f4;
         }
-        .total-price {
-            font-size: 1.5em;
-            margin-top: 20px;
-        }
         .checkout-form input {
             padding: 10px;
             margin: 5px 0;
