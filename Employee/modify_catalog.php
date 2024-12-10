@@ -30,15 +30,15 @@
         table th {
             background-color: #f4f4f4;
         }
-        .remove-btn {
-            background-color: #ff4d4d;
+        .submit-btn {
+            background-color: rgb(180, 180, 180);
             color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
-        .remove-btn:hover {
-            background-color: #cc0000;
+        .submit-btn:hover {
+            background-color: rgb(200, 200, 200);
         }
     </style>
 
@@ -57,15 +57,30 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Filter query
-    $sql = "SELECT id, product_name, image_path, color, style FROM product_catalog WHERE 1";
+    if(isset($_POST['change_row'])) {
+        $id = mysqli_real_escape_string($conn, $_POST['id']);
+        $image_path =  mysqli_real_escape_string($conn, $_POST['image_path']);
+        $product_name = mysqli_real_escape_string($conn, $_POST['product_name']);
+        $color = mysqli_real_escape_string($conn, $_POST['color']);
+        $style = mysqli_real_escape_string($conn, $_POST['style']);
+
+        $update = "UPDATE product_catalog SET image_path = '$image_path', product_name = '$product_name', color='$color', style='$style' WHERE id=$id";
+
+        if (mysqli_query($conn, $update)) {
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit();
+        } else {
+            echo "<p>Error updating product: " . mysqli_error($conn) . "</p>";
+        }
+    }
+
+    $sql = "SELECT id, image_path, product_name, color, style FROM product_catalog WHERE 1";
     $result = mysqli_query($conn, $sql);
 ?>
 
 <body>
-    <h1 style="margin-top: 25px; margin-bottom: 50px">Modify Products</h1>
+    <h1 style="margin-top: 50px; margin-bottom: 50px">Modify Products</h1>
 
-   
         <table>
             <thead>
                 <tr>
@@ -80,27 +95,48 @@
             <tbody>
                 <?php while ($product = mysqli_fetch_assoc($result)): ?>
                     <tr>
+                    <form method="POST">
                         <td><?php echo htmlspecialchars($product['id']); ?></td>
-                        <td><img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" style="width: 50px; height: auto;"></td>
-                        <td><?php echo htmlspecialchars($product['product_name']); ?></td>
-                        <td><?php echo htmlspecialchars($product['color']); ?></td>
-                        <td><?php echo htmlspecialchars($product['style']); ?></td>
                         <td>
-                            <form method="POST">
-                                <input type="hidden" name="remove_key" value="<?php echo $key; ?>">
-                                <button type="submit" name="remove_from_cart" class="remove-btn">Remove </button>
-                            </form>
+                            <input type="text" name="image_path" 
+                                placeholder=""
+                                value="<?php echo htmlspecialchars($product['image_path']); ?>" 
+                                style="width: fill;">
                         </td>
-                    </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
+                        <td>
+                            <input type="text" name="product_name"
+                                placeholder=""
+                                value="<?php echo htmlspecialchars($product['product_name']); ?>" 
+                                style="width: fill;">
+                        </td>
+                        <td>
+                            <input type="text" name="color" 
+                                placeholder=""
+                                value="<?php echo htmlspecialchars($product['color']); ?>" 
+                                style="width: fill;">
+                        </td>
+                        <td>
+                            <input type="text" name="style" 
+                                placeholder=""
+                                value="<?php echo htmlspecialchars($product['style']); ?>" 
+                                style="width: fill;">
+                        </td>
+                        <td>
+                            <input type="hidden" name="id" 
+                                value="<?php echo htmlspecialchars($product['id']); ?>">
+                            <button type="submit" name="change_row" class="submit-btn">
+                                Update
+                            </button>
+                        </td>
+                    </form>
+                </tr>
+            <?php endwhile; ?>
+        </tbody>
+    </table>
 
     <?php include '../footer.php'; ?>
 
-    <?php
-        mysqli_close($conn);
-    ?>
+    <?php mysqli_close($conn); ?>
 
 </body>
 </body>
