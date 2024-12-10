@@ -98,26 +98,23 @@
                     <form method="POST">
                         <td><?php echo htmlspecialchars($product['id']); ?></td>
                         <td>
+                            <img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" style="width: 50px; height: auto; padding: 2px;">
                             <input type="text" name="image_path" 
-                                placeholder=""
                                 value="<?php echo htmlspecialchars($product['image_path']); ?>" 
                                 style="width: fill;">
                         </td>
                         <td>
                             <input type="text" name="product_name"
-                                placeholder=""
                                 value="<?php echo htmlspecialchars($product['product_name']); ?>" 
                                 style="width: fill;">
                         </td>
                         <td>
                             <input type="text" name="color" 
-                                placeholder=""
                                 value="<?php echo htmlspecialchars($product['color']); ?>" 
                                 style="width: fill;">
                         </td>
                         <td>
                             <input type="text" name="style" 
-                                placeholder=""
                                 value="<?php echo htmlspecialchars($product['style']); ?>" 
                                 style="width: fill;">
                         </td>
