@@ -42,7 +42,7 @@
         }
         .submit-btn:hover {
             background-color: rgb(148, 148, 148);
-            color: #FAFAFA;
+            color: #F4F4F4;
             border: 1px solid rgb(148, 148, 148);
         }
     </style>
