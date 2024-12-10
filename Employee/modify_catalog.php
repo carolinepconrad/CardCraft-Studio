@@ -136,7 +136,7 @@
         </tbody>
     </table>
 
-    <?php include '../footer.php'; ?>
+    <?php include '../Employee/employee_footer.php'; ?>
 
     <?php mysqli_close($conn); ?>
 

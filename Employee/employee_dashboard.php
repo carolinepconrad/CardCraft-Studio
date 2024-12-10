@@ -53,10 +53,10 @@ while ($row = mysqli_fetch_array($result)) {
 </body>
 </html>
 
-
+<br><br>
 
 <!-- Footer -->
-<?php include '../footer.php'; ?>
+<?php include '../Employee/employee_footer.php'; ?>
 
 </body>
 </html>
