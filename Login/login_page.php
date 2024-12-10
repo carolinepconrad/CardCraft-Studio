@@ -18,11 +18,11 @@
       <body>
         <h2>Login</h2>
         <div class="form__group field">
-          <form action="process_user_login.php" method="post" >
+          <form action="process_user_login.php" method="post">
             <label class="form__label" for="username" >Email:</label>            
             <input class="form__field" type="text" name="username" id="username" required>
             <label class="form__label" for="username" >Password:</label>
-            <input class="form__field" type="password" name="password"id="password" required>
+            <input class="form__field" type="password" name="password" id="password" required>
             <input class="button" type="submit" value="Login" name="login_try">
           </form>
         </body>

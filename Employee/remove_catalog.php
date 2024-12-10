@@ -20,6 +20,7 @@ include ('../Employee/employee_header.php');
     }
 
 
+
     // Filter query
     $sql = "SELECT id, product_name, image_path, color, style FROM product_catalog WHERE 1";
 
@@ -79,13 +80,12 @@ include ('../Employee/employee_header.php');
 
     // Display the products
     foreach ($products as $product) {
+        $key =  $product['id'];
         echo "<div class='card'>";
         echo "<img src='" . htmlspecialchars($product['image_path']) . "' alt='" . htmlspecialchars($product['product_name']) . "' class='product-image'>";
         echo "<div class='product-name'>" . htmlspecialchars($product['product_name']) . "</div>";
         echo "<div class='details'>Color: " . htmlspecialchars($product['color']) . "<br>Style: " . htmlspecialchars($product['style']) . "</div>";
-        echo "<form method='POST'>";
-        echo "<input type='hidden' name='product_id' value='" . $product['id'] . "'>";
-        echo "</form>";
+        echo "<form  action='remove_object.php' method='POST'><button type='submit' name='remove_object' value= ". $key . ">Remove</button> </form>";
         echo "</div>";
     }
 
