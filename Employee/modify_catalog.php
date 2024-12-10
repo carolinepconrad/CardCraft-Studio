@@ -18,9 +18,11 @@
             text-decoration: none;
         }
         table {
-            width: 100%;
+            width: 98%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            margin-left: 1%;
+
         }
         table th, table td {
             border: 1px solid #ddd;
@@ -31,14 +33,17 @@
             background-color: #f4f4f4;
         }
         .submit-btn {
-            background-color: rgb(180, 180, 180);
-            color: white;
-            border: none;
+            background-color: #F4F4F4;
+            color: #212529;
+            border: 1px solid #ddd;
             padding: 5px 10px;
             cursor: pointer;
+            transition: background-color 0.2s, color 0.2s, border 0.2s;
         }
         .submit-btn:hover {
-            background-color: rgb(200, 200, 200);
+            background-color: rgb(148, 148, 148);
+            color: #FAFAFA;
+            border: 1px solid rgb(148, 148, 148);
         }
     </style>
 
@@ -101,22 +106,22 @@
                             <img src="<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" style="width: 50px; height: auto; padding: 2px;">
                             <input type="text" name="image_path" 
                                 value="<?php echo htmlspecialchars($product['image_path']); ?>" 
-                                style="width: fill;">
+                                style="width: fill; color: gray;">
                         </td>
                         <td>
                             <input type="text" name="product_name"
                                 value="<?php echo htmlspecialchars($product['product_name']); ?>" 
-                                style="width: fill;">
+                                style="width: fill; color: gray;">
                         </td>
                         <td>
                             <input type="text" name="color" 
                                 value="<?php echo htmlspecialchars($product['color']); ?>" 
-                                style="width: fill;">
+                                style="width: fill; color: gray;">
                         </td>
                         <td>
                             <input type="text" name="style" 
                                 value="<?php echo htmlspecialchars($product['style']); ?>" 
-                                style="width: fill;">
+                                style="width: fill; color: gray;">
                         </td>
                         <td>
                             <input type="hidden" name="id" 
